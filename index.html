@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Our Kichijoji · Kai &amp; Maya</title>
-<meta name="description" content="Kai &amp; Maya's own list of places in Kichijoji, with words and manners for the counter.">
+<title>A night at our regular places · Kai &amp; Maya</title>
+<meta name="description" content="Kai &amp; Maya take small groups to their regular bars and restaurants in Kichijoji and Mitaka, Tokyo.">
+<script>try{if(new URLSearchParams(location.search).has('draft'))document.documentElement.classList.add('draft')}catch(_){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&amp;family=Zen+Old+Mincho:wght@700&amp;display=swap">
@@ -15,152 +16,120 @@
   --gold: #F2C766; --rust: #A84A27; --line: #EADFCB; --card: #FFFFFF;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Zen Maru Gothic', system-ui, sans-serif; font-size: 17px; line-height: 1.55; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Zen Maru Gothic', system-ui, sans-serif; font-size: 17px; line-height: 1.6; -webkit-text-size-adjust: 100%; }
 a { color: var(--rust); }
 .wrap { max-width: 680px; margin: 0 auto; padding: 0 16px; }
-header.top { background: var(--navy); color: var(--bg); border-radius: 0 0 28px 28px; padding: 32px 0 26px; }
+header.top { background: var(--navy); color: var(--bg); border-radius: 0 0 28px 28px; padding: 36px 0 30px; }
 .kicker { margin: 0; font-size: 13px; letter-spacing: 3px; font-weight: 700; color: var(--gold); }
-h1 { margin: 6px 0 10px; font-family: 'Zen Old Mincho', serif; font-size: 32px; line-height: 1.2; }
-.lede { margin: 0; color: #E4E1D8; }
-nav.jump { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
-nav.jump ul { list-style: none; margin: 0 auto; padding: 10px 16px; max-width: 680px; display: flex; gap: 8px; overflow-x: auto; }
-nav.jump a { display: inline-block; white-space: nowrap; text-decoration: none; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; font-size: 15px; font-weight: 700; min-height: 40px; }
-main section.part { padding: 28px 0 8px; scroll-margin-top: 64px; }
-h2 { margin: 0 0 6px; font-family: 'Zen Old Mincho', serif; font-size: 26px; line-height: 1.25; }
-.intro { margin: 0 0 16px; color: var(--sub); }
-h3 { margin: 22px 0 10px; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: var(--rust); display: flex; align-items: center; gap: 8px; }
-.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; flex: none; }
-ul.places { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-li.place { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px 14px; }
-a.pl { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; text-decoration: none; color: var(--ink); min-height: 44px; }
-.nm { font-size: 19px; font-weight: 700; }
-.tag { font-size: 12px; font-weight: 700; color: var(--rust); border: 1px solid #C9A38F; border-radius: 999px; padding: 1px 8px; }
-.go { margin-left: auto; font-size: 14px; font-weight: 700; color: var(--rust); }
-.desc { margin: 2px 0 0; color: var(--sub); }
-.info { margin: 4px 0 0; font-size: 14px; font-weight: 700; color: var(--muted); }
-.foot, .note { margin: 8px 2px 0; font-size: 14px; color: var(--muted); }
-.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; }
-.w { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
-.ro { font-family: 'Zen Old Mincho', serif; font-size: 21px; font-weight: 700; }
-.ja { font-size: 16px; color: var(--muted); }
-.me { margin: 4px 0 0; color: var(--sub); }
-ul.small { background: var(--card); border: 1px solid var(--line); border-radius: 16px; margin: 0; padding: 14px 16px 14px 34px; display: flex; flex-direction: column; gap: 8px; color: var(--sub); }
-.allergy { background: var(--card); border: 2px dashed #C9A38F; border-radius: 16px; padding: 16px; }
-.allergy .head { margin: 0 0 4px; font-size: 22px; font-weight: 700; }
-.allergy .head .en { display: block; font-size: 15px; font-weight: 400; color: var(--muted); }
-.chks { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 12px; margin: 12px 0 8px; }
-label.chk { display: flex; align-items: center; gap: 10px; min-height: 44px; cursor: pointer; }
-label.chk input { width: 24px; height: 24px; flex: none; accent-color: var(--navy); }
-label.chk .ja { font-size: 19px; font-weight: 700; color: var(--ink); }
-label.chk .en { font-size: 14px; color: var(--muted); }
-.book { background: var(--navy); color: var(--bg); border-radius: 20px; padding: 22px 20px; margin: 30px 0 0; }
+h1 { margin: 8px 0 14px; font-family: 'Zen Old Mincho', serif; font-size: 34px; line-height: 1.2; }
+.lede { margin: 0 0 10px; color: #E4E1D8; }
+.fact { margin: 16px 0 0; font-weight: 700; color: var(--gold); }
+a.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: var(--gold); color: var(--navy); font-weight: 700; text-decoration: none; margin-top: 18px; }
+section.part { padding: 30px 0 4px; }
+.label { margin: 0 0 4px; font-size: 13px; letter-spacing: 3px; font-weight: 700; color: var(--rust); }
+h2 { margin: 0 0 10px; font-family: 'Zen Old Mincho', serif; font-size: 26px; line-height: 1.25; }
+p { margin: 0 0 12px; }
+.sub { color: var(--sub); }
+.small { font-size: 15px; color: var(--muted); }
+.plan { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px; margin: 14px 0; }
+.plan .meta { margin: 0 0 2px; font-size: 13px; letter-spacing: 2px; font-weight: 700; color: var(--muted); }
+.plan h3 { margin: 0 0 8px; font-family: 'Zen Old Mincho', serif; font-size: 23px; }
+.price { margin: 10px 0 4px; font-size: 20px; font-weight: 700; }
+.price span { font-size: 15px; font-weight: 400; color: var(--muted); }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-top: 12px; }
+.two .opt { border-top: 1px solid var(--line); padding-top: 12px; }
+.opt h4 { margin: 0 0 6px; font-size: 14px; letter-spacing: 3px; color: var(--rust); }
+ul.list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; color: var(--sub); }
+.ph { display: none; margin: 12px 0; height: 200px; border: 2px dashed #C9A38F; border-radius: 16px; background: #F3EBDB; align-items: center; justify-content: center; text-align: center; padding: 12px; }
+.ph span { font-size: 14px; font-weight: 700; letter-spacing: 1px; color: var(--rust); }
+.draft .ph { display: flex; }
+.book { background: var(--navy); color: var(--bg); border-radius: 20px; padding: 24px 20px; margin: 30px 0 0; }
 .book h2 { color: var(--bg); }
-.book p { margin: 0 0 14px; color: #E4E1D8; }
-a.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: var(--gold); color: var(--navy); font-weight: 700; text-decoration: none; }
+.book p { color: #E4E1D8; }
 footer { padding: 24px 0 40px; font-size: 14px; color: var(--muted); }
 </style>
 </head>
 <body>
 <header class="top">
 <div class="wrap">
-<p class="kicker">KICHIJOJI · TOKYO</p>
-<h1>Our Kichijoji</h1>
-<p class="lede">Some of the places we actually go, and the words that help at the counter. From Kai &amp; Maya, who have lived in Kichijoji for 15 years.</p>
+<p class="kicker">KICHIJOJI &amp; MITAKA · WITH LOCALS</p>
+<h1>A night at the places we call our own.</h1>
+<p class="lede">Not a tour. More like a friend taking you to their regular places.</p>
+<p class="lede">For your first trip to Tokyo, or your tenth. Small bars and restaurants that are hard to walk into on your own, with one or both of us, locals who are regulars there.</p>
+<p class="fact">For 2–4 adults (20+) · from ¥30,000 per person, all in</p>
+<a class="btn" href="#book">Tell us about your night</a>
 </div>
 </header>
-<nav class="jump" aria-label="Sections">
-<ul>
-<li><a href="#places">Places</a></li>
-<li><a href="#words">Words</a></li>
-<li><a href="#manners">Manners</a></li>
-<li><a href="#allergy">Allergies</a></li>
-<li><a href="#book">Book a night</a></li>
-</ul>
-</nav>
 <main class="wrap">
-<section class="part" id="places">
-<h2>Places</h2>
-<p class="intro">Most are within a 10-minute walk of the station. Tap a name to open it in Google Maps.</p>
-<p class="note">Per person with drinks: ¥ up to ¥3,000 · ¥¥ ¥3,000–6,000 · ¥¥¥ over ¥6,000. 2F = one floor up; B1 = basement. Times are weekday opening times. Hours and days off can change, so check before you go.</p>
-<section class="cat"><h3><span class="dot" style="background:#C25A2E"></span>Dinner</h3><ul class="places"><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Hanamichi+Kichijoji&amp;query_place_id=ChIJ10Pt_0fuGGARuToFYjbttz0" target="_blank" rel="noopener"><span class="nm">Hanamichi</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">A sake-focused izakaya run by a couple; the menu changes daily.</p><p class="info">¥¥¥ · From 18:30 · Closed Sun, Mon · Cash only · 2F</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Yoin+Kichijoji&amp;query_place_id=ChIJEcqBWLPvGGAR3CuPMquh1Kk" target="_blank" rel="noopener"><span class="nm">Yoin</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">Obanzai (small home-style dishes) from a couple, in wigtown&#x27;s building.</p><p class="info">¥¥ · From 17:00 (Sat, Sun 15:00) · Closed Mon · Card OK</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Kujirayama+Kichijoji&amp;query_place_id=ChIJf6VSBUnuGGARfj6BNB4xdNg" target="_blank" rel="noopener"><span class="nm">Kujirayama</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">A small izakaya with every kind of drink. Welcome even on your own.</p><p class="info">¥¥ · From 17:00 · Closed Sun · Card OK · 2F</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Andu+Kichijoji&amp;query_place_id=ChIJ6fGsvDjuGGARTdf4Vw_gpeU" target="_blank" rel="noopener"><span class="nm">Andu</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">A bistro strong on Burgundy wine. Welcome even on your own.</p><p class="info">¥¥¥ · From 18:00 · Closed Sun · Card OK</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Kissho+Saikan+Kichijoji&amp;query_place_id=ChIJH6MaBUjuGGARSUsV5CIdHe0" target="_blank" rel="noopener"><span class="nm">Kissho Saikan</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">Homestyle Chinese, run by a family.</p><p class="info">¥¥ · From 11:00 · Open daily · Card OK · 3F</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=P%C3%A9tillant+Kichijoji&amp;query_place_id=ChIJR7bDwJ7vGGARxRuSkxG2EmA" target="_blank" rel="noopener"><span class="nm">Pétillant</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">A charcoal-grill French counter with a strong wine list, for a special night.</p><p class="info">¥¥¥ · Lunch 11:30, dinner 17:00 · Irregular days off</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Sushi+Shigeno+Kichijoji&amp;query_place_id=ChIJXxyoCrDvGGARGxQYtLLL0hI" target="_blank" rel="noopener"><span class="nm">Sushi Shigeno</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">A small sushi counter in Mitaka, one stop west. Sushi and small dishes, with about ten sakes.</p><p class="info">¥¥¥ · From 17:00 · Closed Thu · Phone booking only</p></li></ul></section><section class="cat"><h3><span class="dot" style="background:#3E8EC4"></span>Pubs</h3><ul class="places"><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=wigtown+Kichijoji&amp;query_place_id=ChIJjaAMOjnuGGAR25JBaJGSS0w" target="_blank" rel="noopener"><span class="nm">wigtown</span> <span class="tag">Easy in English</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">A British pub with Japanese craft gin, whisky and Scottish beer. No smoking inside.</p><p class="info">¥¥ · From 17:00 (Sat, Sun 14:00) · Closed Thu · Card OK</p></li></ul></section><section class="cat"><h3><span class="dot" style="background:#B07A1E"></span>Tachinomi &amp; casual</h3><ul class="places"><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Craft+Beer+TOCA+Kichijoji&amp;query_place_id=ChIJheMTbZvvGGARZXsCFA8ABf8" target="_blank" rel="noopener"><span class="nm">Craft Beer TOCA</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">Craft beer at the edge of Inokashira Park, plus a little sake.</p><p class="info">¥¥ · From 16:30 (Mon, Tue 18:00) · Open daily · Card OK</p></li></ul></section><section class="cat"><h3><span class="dot" style="background:#23305C"></span>Bars</h3><ul class="places"><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=HARD+SHAKE+BAR130+Kichijoji&amp;query_place_id=ChIJ4eaW13PvGGARlWTlOiYZ8o8" target="_blank" rel="noopener"><span class="nm">HARD SHAKE BAR130</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">A cocktail bar on the third floor above Harmonica Yokocho, away from the noise.</p><p class="info">¥¥ · From 17:00 (Sat, Sun 16:00) · Closed Thu · 3F</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=BUILD+BAR130+Kichijoji&amp;query_place_id=ChIJU4WEQh7vGGARmYKvSzlEiD4" target="_blank" rel="noopener"><span class="nm">BUILD BAR130</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">The sister bar of HARD SHAKE BAR130, focused on craft gin and mezcal.</p><p class="info">¥¥ · From 20:00 · Closed Sun · 2F</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=SCREW+DRIVER+Kichijoji&amp;query_place_id=ChIJYUDrDkfuGGARfveMJGIk5xI" target="_blank" rel="noopener"><span class="nm">SCREW DRIVER</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">A rum bar with more than 500 rums, open since 1997.</p><p class="info">¥¥ · From 19:00 (Sat 17:00) · Closed Sun · 4F</p></li></ul><p class="foot">All three are in the Kichijoji Bar Map, if you want to keep going.</p></section><section class="cat"><h3><span class="dot" style="background:#8E4C78"></span>Ramen</h3><ul class="places"><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Ramen+Sawada+Kichijoji&amp;query_place_id=ChIJDTPucdPvGGARUyUK4yYl8QE" target="_blank" rel="noopener"><span class="nm">Ramen Sawada</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">Light, clear chicken broth.</p><p class="info">¥ · From 11:00 · Open daily</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Hope-ken+Kichijoji&amp;query_place_id=ChIJVUlwv0fuGGAREfKscLN6LZg" target="_blank" rel="noopener"><span class="nm">Hope-ken</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">The original back-fat pork-soy.</p><p class="info">¥ · From 11:00 · Closed Tue, Wed</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Tsukemen+Enji+Kichijoji&amp;query_place_id=ChIJZ1L290fuGGARHN_FQIq56HI" target="_blank" rel="noopener"><span class="nm">Tsukemen Enji</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">Pioneer of vegepota tsukemen: rich pork-and-seafood broth blended with vegetable purée.</p><p class="info">¥ · From 11:00 · Open daily</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Dokutsuya+Kichijoji&amp;query_place_id=ChIJm8EJaTjuGGARE-2uonEBzeQ" target="_blank" rel="noopener"><span class="nm">Dokutsuya</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">Iekei: Yokohama-style pork-soy.</p><p class="info">¥ · From 11:00 · Closed Mon</p></li></ul></section><section class="cat"><h3><span class="dot" style="background:#2B7A78"></span>Udon</h3><ul class="places"><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Ibuki+Udon+Kichijoji&amp;query_place_id=ChIJizSBRkjuGGARV0tn49N9AaU" target="_blank" rel="noopener"><span class="nm">Ibuki Udon</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">Udon. Order at the ticket machine (it has English). Mostly standing.</p><p class="info">¥ · From 11:00 · Open daily</p></li></ul></section><section class="cat"><h3><span class="dot" style="background:#7A5230"></span>Cafes</h3><ul class="places"><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Kugutsuso+Kichijoji&amp;query_place_id=ChIJG-aoZEjuGGARDr4v62ZwbXo" target="_blank" rel="noopener"><span class="nm">Kugutsuso</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">A retro coffee house, known for its curry.</p><p class="info">¥ · From 10:00 · Open daily · B1</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=LIGHT+UP+COFFEE+Kichijoji&amp;query_place_id=ChIJe-TeakzuGGAR7ZrlpUdY69g" target="_blank" rel="noopener"><span class="nm">LIGHT UP COFFEE</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">Third-wave coffee; you can buy their beans too. A bit far from the station, so usually less crowded.</p><p class="info">¥ · From 9:00 · Open daily · Card OK</p></li></ul></section><section class="cat"><h3><span class="dot" style="background:#3E7046"></span>Walk around</h3><ul class="places"><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Inokashira+Park+Kichijoji&amp;query_place_id=ChIJLWaVdDXuGGART_Pg1R3CZ4A" target="_blank" rel="noopener"><span class="nm">Inokashira Park</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">A big park with a pond and swan boats, a few minutes south of the station.</p></li><li class="place"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Harmonica+Yokocho+Kichijoji&amp;query_place_id=ChIJZXco9RXvGGARYzRNqY-U-o8" target="_blank" rel="noopener"><span class="nm">Harmonica Yokocho</span><span class="go" aria-hidden="true">Map ›</span></a><p class="desc">Narrow lanes of tiny bars and eateries, right by the station&#x27;s north exit.</p></li></ul></section>
+<figure class="ph" aria-hidden="true"><span>PHOTO · a toast at the counter</span></figure>
+<section class="part">
+<p class="label">YOUR HOSTS</p>
+<h2>Kai &amp; Maya</h2>
+<figure class="ph" aria-hidden="true"><span>PHOTO · Kai &amp; Maya</span></figure>
+<p>We are a married couple who have lived in Kichijoji for 15 years. One izakaya changes its menu every day, so we are there about three nights a week. A friend from the Netherlands once made time on a Tokyo business trip just to come back to it. At a family-run Chinese restaurant nearby, Maya chats with the family in Chinese. We sit at the counter when there is room, introduce you to the owners, and help you talk with them.</p>
+<p class="sub">Why you won't find them on your own: phone-only reservations, Japanese-only menus, doors that are easy to miss.</p>
 </section>
-<section class="part" id="words">
-<h2>Words from the bar counter</h2>
-<p class="intro">Point at the Japanese, or say it out loud. The owners will smile either way.</p>
-<section class="grp"><h3>This night</h3><div class="cards"><div class="card"><p class="w"><span class="ro">Ikitsuke</span><span class="ja" lang="ja">行きつけ</span></p><p class="me">Your regular place, where the owner knows your name.</p></div>
-<div class="card"><p class="w"><span class="ro">Joren</span><span class="ja" lang="ja">常連</span></p><p class="me">A regular. Tonight, that&#x27;s us, and maybe one day, you.</p></div>
-<div class="card"><p class="w"><span class="ro">Hashigo</span><span class="ja" lang="ja">はしご</span></p><p class="me">Hopping from one small place to the next, like climbing a ladder.</p></div>
-<div class="card"><p class="w"><span class="ro">Tachinomi</span><span class="ja" lang="ja">立ち飲み</span></p><p class="me">A standing bar for a quick, casual drink. Some have a few seats, but most people stand.</p></div></div></section>
-<section class="grp"><h3>Walking in</h3><div class="cards"><div class="card"><p class="w"><span class="ro">Irasshaimase</span><span class="ja" lang="ja">いらっしゃいませ</span></p><p class="me">&quot;Welcome!&quot; No need to answer. A smile and a nod is enough.</p></div>
-<div class="card"><p class="w"><span class="ro">Oshibori</span><span class="ja" lang="ja">おしぼり</span></p><p class="me">A hot or cold towel to wipe your hands before you eat.</p></div>
-<div class="card"><p class="w"><span class="ro">Otoshi</span><span class="ja" lang="ja">お通し</span></p><p class="me">A small dish that arrives without ordering. It is charged like a small seat charge. That is normal, so no need to send it back.</p></div></div></section>
-<section class="grp"><h3>Ordering</h3><div class="cards"><div class="card"><p class="w"><span class="ro">Osusume</span><span class="ja" lang="ja">おすすめ</span></p><p class="me">&quot;What do you recommend?&quot; Ask the owner, then let them choose.</p></div>
-<div class="card"><p class="w"><span class="ro">Omakase</span><span class="ja" lang="ja">おまかせ</span></p><p class="me">&quot;I&#x27;ll leave it to you.&quot; The owner picks for you.</p></div>
-<div class="card"><p class="w"><span class="ro">Okawari</span><span class="ja" lang="ja">おかわり</span></p><p class="me">&quot;Another one, please.&quot; A refill of the same drink.</p></div>
-<div class="card"><p class="w"><span class="ro">Chaser</span><span class="ja" lang="ja">チェイサー</span></p><p class="me">A glass of water on the side. Just ask for one.</p></div></div></section>
-<section class="grp"><h3>Drinks</h3><div class="cards"><div class="card"><p class="w"><span class="ro">Nama</span><span class="ja" lang="ja">生</span></p><p class="me">Draft beer. &quot;Nama, kudasai&quot; gets you one.</p></div>
-<div class="card"><p class="w"><span class="ro">Highball</span><span class="ja" lang="ja">ハイボール</span></p><p class="me">Whisky and soda. A favorite in bars across Japan.</p></div>
-<div class="card"><p class="w"><span class="ro">Hiya / Atsukan</span><span class="ja" lang="ja">冷や・熱燗</span></p><p class="me">Sake at room temperature, or served warm.</p></div>
-<div class="card"><p class="w"><span class="ro">Shochu</span><span class="ja" lang="ja">焼酎</span></p><p class="me">A spirit made from sweet potato, barley, or rice. Try it with water or soda.</p></div>
-<div class="card"><p class="w"><span class="ro">Umeshu</span><span class="ja" lang="ja">梅酒</span></p><p class="me">Sweet plum liqueur, often on the rocks.</p></div></div></section>
-<section class="grp"><h3>Food</h3><div class="cards"><div class="card"><p class="w"><span class="ro">Tsumami</span><span class="ja" lang="ja">つまみ</span></p><p class="me">Small dishes to go with your drinks.</p></div>
-<div class="card"><p class="w"><span class="ro">Obanzai</span><span class="ja" lang="ja">おばんざい</span></p><p class="me">Kyoto-style home cooking, served in small bowls.</p></div>
-<div class="card"><p class="w"><span class="ro">Shime</span><span class="ja" lang="ja">締め</span></p><p class="me">The last dish of the night, often noodles or rice.</p></div></div></section>
-<section class="grp"><h3>The regulars' way</h3><div class="cards"><div class="card"><p class="w"><span class="ro">Kanpai</span><span class="ja" lang="ja">乾杯</span></p><p class="me">Cheers. Wait until everyone has a glass before the first sip.</p></div>
-<div class="card"><p class="w"><span class="ro">Okaikei</span><span class="ja" lang="ja">お会計</span></p><p class="me">&quot;The bill, please.&quot;</p></div>
-<div class="card"><p class="w"><span class="ro">Gochisosama</span><span class="ja" lang="ja">ごちそうさま</span></p><p class="me">Said as you leave. Thanks for the food and drink.</p></div></div></section>
-<section class="grp"><h3>Streets &amp; alleys</h3><div class="cards"><div class="card"><p class="w"><span class="ro">Dori</span><span class="ja" lang="ja">通り</span></p><p class="me">Street. Inokashira-dori is Inokashira Street.</p></div>
-<div class="card"><p class="w"><span class="ro">Kaido</span><span class="ja" lang="ja">街道</span></p><p class="me">An old road between towns, now a main road. Like Itsukaichi-kaido.</p></div>
-<div class="card"><p class="w"><span class="ro">Yokocho</span><span class="ja" lang="ja">横丁</span></p><p class="me">A narrow alley packed with tiny bars and eateries, like Harmonica Yokocho.</p></div>
-<div class="card"><p class="w"><span class="ro">Shotengai</span><span class="ja" lang="ja">商店街</span></p><p class="me">A local shopping street, often under a roof. Sunroad is one.</p></div>
-<div class="card"><p class="w"><span class="ro">Ura</span><span class="ja" lang="ja">裏</span></p><p class="me">&quot;Behind.&quot; Locals call the bar-filled lanes behind a big store by its name, like Yodobashi-ura.</p></div>
-<div class="card"><p class="w"><span class="ro">Koen-guchi</span><span class="ja" lang="ja">公園口</span></p><p class="me">The park-side (south) exit of a station. Many izakaya gather around it.</p></div></div></section>
-<section class="grp"><h3>Who's behind the counter</h3><div class="cards"><div class="card"><p class="w"><span class="ro">Masuta</span><span class="ja" lang="ja">マスター</span></p><p class="me">What regulars call the owner or head bartender of a bar.</p></div>
-<div class="card"><p class="w"><span class="ro">Taisho</span><span class="ja" lang="ja">大将</span></p><p class="me">What regulars call the chef-owner at a sushi counter or izakaya.</p></div></div></section>
-</section>
-<section class="part" id="manners">
-<h2>Good manners at the counter</h2>
-<p class="intro">What regulars do.</p>
-<section class="grp"><h3>About tipping</h3><div class="cards"><div class="card"><p class="w"><span class="ro">No tips, please</span><span class="ja" lang="ja">チップは不要</span></p><p class="me">Japan has no tipping. Foreign cash can&#x27;t be used in the shop and is hard to exchange, so a kind tip can leave the owner with a problem.</p></div>
-<div class="card"><p class="w"><span class="ro">&quot;Masuta mo ippai dozo&quot;</span><span class="ja" lang="ja">マスターも一杯どうぞ</span></p><p class="me">Want to say thank you? Buy the owner a drink. It goes on your bill like any other.</p></div>
-<div class="card"><p class="w"><span class="ro">&quot;Oishikatta&quot;</span><span class="ja" lang="ja">おいしかった</span></p><p class="me">&quot;That was delicious.&quot; Owners remember the guests who say it.</p></div></div></section>
-<section class="grp"><h3>At the counter</h3><div class="cards"><div class="card"><p class="w"><span class="ro">Drinks first</span><span class="ja" lang="ja">まず飲み物</span></p><p class="me">Order a drink first, then a few dishes at a time. More can always follow.</p></div>
-<div class="card"><p class="w"><span class="ro">Ask before photos</span><span class="ja" lang="ja">写真は一声かけて</span></p><p class="me">Food is usually fine. Ask before photographing the owner or other guests: &quot;Shashin, ii desu ka?&quot;</p></div>
-<div class="card"><p class="w"><span class="ro">Shared space</span><span class="ja" lang="ja">カウンターは共有</span></p><p class="me">Counter seats are close together. Keep voices easy and bags under your chair.</p></div>
-<div class="card"><p class="w"><span class="ro">Smoking</span><span class="ja" lang="ja">たばこ</span></p><p class="me">Rules differ by place, and many are smoke-free inside. Ask before you light up.</p></div>
-<div class="card"><p class="w"><span class="ro">Paying</span><span class="ja" lang="ja">お支払い</span></p><p class="me">Many places take cards. A little yen in your pocket still helps.</p></div></div></section>
-<section class="grp"><h3>Sharing the table</h3><div class="cards"><div class="card"><p class="w"><span class="ro">Torizara</span><span class="ja" lang="ja">取り皿</span></p><p class="me">Small plates for sharing. Dishes are meant for the table: &quot;Torizara, kudasai.&quot;</p></div>
-<div class="card"><p class="w"><span class="ro">Oshaku</span><span class="ja" lang="ja">お酌</span></p><p class="me">Pour for your friends, and they pour for you. Nobody fills their own glass first.</p></div>
-<div class="card"><p class="w"><span class="ro">Chopsticks</span><span class="ja" lang="ja">お箸</span></p><p class="me">Never pass food from chopsticks to chopsticks, or stand them up in rice.</p></div>
-<div class="card"><p class="w"><span class="ro">Last order</span><span class="ja" lang="ja">ラストオーダー</span></p><p class="me">The last call for food and drinks, often 30 minutes before closing.</p></div></div></section>
-<section class="grp"><h3>Small shops, small teams</h3><ul class="small"><li>Many of our shops are run by just one or two people. When it&#x27;s busy, food can take a while. That&#x27;s part of a small shop, not bad service.</li><li>Order a few dishes at once, rather than one at a time.</li><li>If someone is busy cooking, ask the person serving instead. If the owner is doing both, wait for a quiet moment.</li></ul></section>
-</section>
-<section class="part" id="allergy">
-<h2>Food allergies</h2>
-<p class="intro">Tick what you can't eat, then show this screen to the staff.</p>
-<div class="allergy">
-<p class="head" lang="ja">アレルギーがあります。少量でも食べられません。<span class="en" lang="en">I have an allergy. Even a small amount is a problem.</span></p>
-<div class="chks">
-<label class="chk"><input type="checkbox"><span><span class="ja" lang="ja">肉</span> <span class="en">meat</span></span></label>
-<label class="chk"><input type="checkbox"><span><span class="ja" lang="ja">豚肉（豚骨スープも）</span> <span class="en">pork, incl. broth</span></span></label>
-<label class="chk"><input type="checkbox"><span><span class="ja" lang="ja">魚（だし・かつお節も）</span> <span class="en">fish, incl. dashi</span></span></label>
-<label class="chk"><input type="checkbox"><span><span class="ja" lang="ja">甲殻類・貝・イカ・タコ</span> <span class="en">shellfish, squid, octopus</span></span></label>
-<label class="chk"><input type="checkbox"><span><span class="ja" lang="ja">卵</span> <span class="en">egg</span></span></label>
-<label class="chk"><input type="checkbox"><span><span class="ja" lang="ja">乳製品</span> <span class="en">dairy</span></span></label>
-<label class="chk"><input type="checkbox"><span><span class="ja" lang="ja">小麦</span> <span class="en">wheat</span></span></label>
-<label class="chk"><input type="checkbox"><span><span class="ja" lang="ja">そば</span> <span class="en">buckwheat</span></span></label>
-<label class="chk"><input type="checkbox"><span><span class="ja" lang="ja">落花生・ナッツ</span> <span class="en">peanuts, tree nuts</span></span></label>
-<label class="chk"><input type="checkbox"><span><span class="ja" lang="ja">アルコール（料理酒・みりんも）</span> <span class="en">alcohol, incl. in cooking</span></span></label>
+<section class="part">
+<p class="label">WAYS TO SPEND THE EVENING</p>
+<h2>Private, unhurried, and all taken care of.</h2>
+<p class="sub">Just your group of 2 to 4, all 20 or older, at small places, many of which take phone bookings only. Food and two to three drinks at every place, booking, and your hosts all evening are in the price. No booking fees, no tips. We can't offer vegetarian, vegan, halal or allergy-safe meals.</p>
+<div class="plan">
+<p class="meta">2 STOPS · 3 HRS · 2–3 GUESTS</p>
+<h3>Casual Night</h3>
+<figure class="ph" aria-hidden="true"><span>PHOTO · izakaya, then a small bar</span></figure>
+<p class="sub">For example, dinner at a neighborhood izakaya, then a small bar to finish the night. We order for you, introduce the owners, and help you talk with them whenever you like.</p>
+<p class="price">¥30,000 per person <span>· about US$190</span></p>
+<p class="small">All in: food and drinks at both places, booking, and your hosts all evening</p>
 </div>
-<p class="note">For going on your own; our hosted evenings can't cater for allergies. Small kitchens may not be able to avoid these completely. <span lang="ja">避けきれない場合があります。</span></p>
+<div class="plan">
+<p class="meta">3 STOPS · 4 HRS · 2–4 GUESTS</p>
+<h3>Our Usual Night</h3>
+<figure class="ph" aria-hidden="true"><span>PHOTO · our favorite izakaya</span></figure>
+<p class="sub">For example, Japanese craft gin at a cozy local pub, small home-style dishes, then sake and seasonal food at our favorite izakaya.</p>
+<p class="price">¥35,000 per person <span>· about US$220</span></p>
+<p class="small">All in: food and drinks at all three places, booking, and your hosts all evening</p>
 </div>
+<p class="small">Many other combinations are possible, such as a pub with plenty of whisky, craft beer, or a bistro with good wine; we pick the stops to match what you like, within the evenings and prices above. Wine lovers: we can build an evening around wine, though not every stop will be a wine bar. Rum lovers can make their last stop a bar with over 500 rums, opened in 1997 by the founder of the Japan Rum Association.</p>
+<div class="plan">
+<p class="meta">ONE PLACE · 3 HRS · 2 OR 4 GUESTS · LUNCH TOO</p>
+<h3>One Long Dinner</h3>
+<p class="sub">Both counters are run by couples who love to talk. You watch them cook right in front of you, often after they show you the ingredients, and we stay with you to translate whenever they have a moment to chat. Come as two and you sit among the regulars; come as four and the counter is all yours. On weekends, lunch works too.</p>
+<div class="two">
+<div class="opt">
+<h4>SUSHI</h4>
+<figure class="ph" aria-hidden="true"><span>PHOTO · sushi counter (after the shop&#x27;s OK)</span></figure>
+<p class="sub">A cozy counter in Mitaka, with fresh and aged fish from Toyosu. Plates like hairy crab and shirako tempura, served to suit each of you, then sushi you each pick piece by piece, off the menu we arrange with the chef.</p>
+<p class="price">¥40,000 per person <span>· about US$255</span></p>
+<p class="small">Includes: about 13 small plates and sushi each, a beer and about 360 ml of sake each</p>
+</div>
+<div class="opt">
+<h4>FRENCH</h4>
+<figure class="ph" aria-hidden="true"><span>PHOTO · charcoal-grill French (after the shop&#x27;s OK)</span></figure>
+<p class="sub">A charcoal grill in Kichijoji, known for seasonal game. A course might bring Nagano-made cured ham, a starter, soup, a main you choose, then dessert or, like us, cheese and more Burgundy.</p>
+<p class="price">¥50,000 per person <span>· about US$320</span></p>
+<p class="small">Includes: the course and wine pairing</p>
+</div>
+</div>
+<p class="small">All in, both: booking and your hosts all evening (we pay for our own meal). Anything extra? Pay the difference at the shop.</p>
+</div>
+</section>
+<section class="part">
+<p class="label">INCLUDED</p>
+<ul class="list"><li>At each place, a first drink together: we help you order and tell you about the shop and its owners. Your food and drinks stay covered all evening; after that first drink, we pay for our own</li><li>Your hosts close by all evening</li><li>Dinner and drinks at every stop, about two to three drinks per place: beer, highballs, sake, cocktails and more from the regular menu</li><li>Photos of your night, where the shop allows and with the OK of anyone in them</li><li>We settle the bill at each stop</li><li>A pocket booklet of bar words and manners to take home</li></ul>
+</section>
+<section class="part">
+<p class="label">WHEN YOU BOOK</p>
+<ul class="list"><li>Book at least 7 days ahead. Pay by card in advance, but only after we&#x27;ve talked it through with you by email or messages and your date is set; then we send a payment link. Free cancellation until two days before; the day before or on the day, the full price is charged. These small shops turn other guests away to hold your seats</li><li>If we have to cancel, you get a full refund. If a shop has to cancel, we suggest another; if that doesn&#x27;t suit you, we refund in full</li><li>Photos of your group are welcome. Please don&#x27;t film or post the shops or owners for content, reviews or collaborations; these are regulars&#x27; places. There are no free or discounted spots</li></ul>
+</section>
+<section class="part">
+<p class="label">GOOD TO KNOW</p>
+<ul class="list"><li>At each place, the first drink is at your table. After that, on Casual and Usual Nights, it&#x27;s your choice, depending on seating: we stay at your table, or sit close by so you can enjoy your own evening. Wave us over anytime, for example to talk with the owner.</li><li>On Casual and Usual Nights, we meet you at Kichijoji Station around 6 pm, walk between places, and finish by 9 or 10 pm. For One Long Dinner, we wait for you outside the shop; beforehand we send a card with its name and address in Japanese to show a taxi driver. Kichijoji is about 15 minutes from Shinjuku on the JR Chuo Line; getting there is not included. Either One Long Dinner can also be a weekend lunch</li><li>Order what you like, or let the shop choose. Beyond about two to three drinks per place, or for a pricier drink, you pay the difference at the shop; they&#x27;ll tell you before pouring. As a guide, a drink is about ¥700–1,500 at izakaya and ¥1,500–2,500 at bars; rare whiskies or rums can cost more</li><li>Not drinking? The price is the same; the shop makes it up with extra food or soft drinks. Everyone in your group must still be 20 or older, Japan&#x27;s drinking age</li><li>Casual and Usual Nights mean walking between places, and some are up a flight of stairs. If walking or stairs are hard for you, One Long Dinner is the easier choice: one place, no stairs, and you can take a taxi to the door. Tell us either way</li><li>Our shops have small, shared kitchens, so we can&#x27;t offer vegetarian, vegan, halal or allergy-safe meals, even partly. Simple dislikes, like sea urchin or raw oysters? Tell us, and we&#x27;ll order around them</li></ul>
 </section>
 <section class="book" id="book">
-<h2>Spend an evening with us</h2>
-<p>We walk you to our regular places and help with ordering, so you can just enjoy the night.</p>
-<a class="btn" href="https://tally.so/r/PRdXZd" target="_blank" rel="noopener">Ask about a date</a>
+<h2>Interested? Tell us about your night.</h2>
+<p>A short form: dates, group size, which evening, foods you avoid, what you're in the mood for, and how you'd like us to reach you (email, LINE or Instagram). We usually reply within two days. Just have a question? Use the same form.</p>
+<a class="btn" href="https://tally.so/r/PRdXZd" target="_blank" rel="noopener">Open the form</a>
+<p class="small" style="color:#C9C6BD;margin-top:14px">Or ask the friend who shared this with you. Hosted in English.</p>
 </section>
 </main>
 <footer class="wrap">
