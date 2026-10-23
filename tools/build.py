@@ -310,21 +310,29 @@ WORDS = [
   ("Osusume", "おすすめ", "\"What do you recommend?\" Ask the owner, then let them choose.", "「おすすめは？」と店主に聞いて、選んでもらいましょう。"),
   ("Omakase", "おまかせ", "\"I'll leave it to you.\" The owner picks for you.", "「お任せします」。店主が選んでくれます。"),
   ("Okawari", "おかわり", "\"Another one, please.\" A refill of the same drink.", "「もう一杯」。同じ飲み物をもう一杯。"),
-  ("Chaser", "チェイサー", "A glass of water on the side. Just ask for one.", "お酒と一緒に飲む水。頼めば出してくれます。")]),
+  ("Chaser", "チェイサー", "A glass of water on the side. Just ask for one.", "お酒と一緒に飲む水。頼めば出してくれます。"),
+  ("Sumimasen", "すみません", "\"Excuse me.\" Say it to call the staff over. A raised hand helps too.", "店の人を呼ぶときの一言。軽く手を挙げると伝わりやすいです。"),
+  ("Kore, kudasai", "これ、ください", "\"This one, please.\" Point at the menu as you say it.", "メニューを指さしながら言えば、注文できます。")]),
  ("Drinks", "飲み物", [
   ("Nama", "生", "Draft beer. \"Nama, kudasai\" gets you one.", "生ビール。「生、ください」で出てきます。"),
   ("Highball", "ハイボール", "Whisky and soda. A favorite in bars across Japan.", "ウイスキーのソーダ割り。日本中のバーで人気です。"),
   ("Hiya / Atsukan", "冷や・熱燗", "Sake at room temperature, or served warm.", "常温の日本酒と、温めた日本酒。"),
   ("Shochu", "焼酎", "A spirit made from sweet potato, barley, or rice. Try it with water or soda.", "芋や麦、米から造る蒸留酒。水割りやソーダ割りで。"),
-  ("Umeshu", "梅酒", "Sweet plum liqueur, often on the rocks.", "甘い梅のお酒。ロックで飲むことが多いです。")]),
+  ("Umeshu", "梅酒", "Sweet plum liqueur, often on the rocks.", "甘い梅のお酒。ロックで飲むことが多いです。"),
+  ("Nihonshu", "日本酒", "What Japanese call sake. In Japanese, \"osake\" can mean any alcohol, so ask for nihonshu.", "いわゆるsakeのこと。日本語の「お酒」は酒類全般を指すので、「日本酒」と頼むのが確実です。"),
+  ("Ichi-go", "一合", "A sake measure, about 180 ml. Sake is often ordered by the go.", "日本酒の量の単位で、約180ml。日本酒は合で頼むことが多いです。")]),
  ("Food", "料理", [
   ("Tsumami", "つまみ", "Small dishes to go with your drinks.", "お酒に合わせる小皿料理。"),
   ("Obanzai", "おばんざい", "Kyoto-style home cooking, served in small bowls.", "小鉢で出てくる、京都風の家庭料理。"),
   ("Shime", "締め", "The last dish of the night, often noodles or rice.", "その夜の最後の一品。麺やご飯が多いです。")]),
  ("The regulars' way", "常連のやり方", [
   ("Kanpai", "乾杯", "Cheers. Wait until everyone has a glass before the first sip.", "全員のグラスがそろってから、最初の一口を。"),
+  ("Itadakimasu", "いただきます", "Said before you eat or drink. Thanks for the food.", "食べる前に言うことば。料理へのお礼です。"),
   ("Okaikei", "お会計", "\"The bill, please.\"", "「お会計をお願いします」。"),
   ("Gochisosama", "ごちそうさま", "Said as you leave. Thanks for the food and drink.", "帰るときに言うことば。料理とお酒へのお礼です。")]),
+ ("At the sushi counter", "鮨のカウンターで", [
+  ("Okonomi", "お好み", "Ordering sushi piece by piece, choosing each one yourself.", "鮨を一貫ずつ、好きなネタを選んで頼むこと。"),
+  ("Gari", "ガリ", "Sweet pickled ginger served with sushi. Eat a little between pieces to refresh your palate.", "鮨に添える甘酢漬けの生姜。合間に少し食べて、口の中をさっぱりさせます。")]),
  ("Streets & alleys", "通りと路地", [
   ("Dori", "通り", "Street. Inokashira-dori is Inokashira Street.", "通りのこと。Inokashira-doriは井の頭通りです。"),
   ("Kaido", "街道", "An old road between towns, now a main road. Like Itsukaichi-kaido.", "町と町を結んだ古い道で、今は幹線道路です。五日市街道がその例です。"),
