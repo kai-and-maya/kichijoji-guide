@@ -221,7 +221,6 @@ def top_page(lang, other):
     return head(lang, T["title"], T["desc"]) + f"""<header class="top">
 <div class="wrap">
 {langbtn(other, lang)}
-<p class="kicker">{T["kicker"]}</p>
 <h1>{e(T["brand"])}</h1>
 <p class="tagline">{e(T["tagline"])}</p>
 {ledes}
