@@ -11,33 +11,62 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&amp;family=Zen+Old+Mincho:wght@700&amp;display=swap">
 <style>
-:root {
-  --bg: #FBF6EC; --ink: #1B2238; --sub: #4A4E63; --muted: #5E6377; --navy: #1F2A4A;
-  --gold: #F2C766; --rust: #A84A27; --line: #EADFCB; --card: #FFFFFF;
-}
+:root { --bg:#FBF6EC; --ink:#1B2238; --sub:#4A4E63; --muted:#5E6377; --navy:#1F2A4A; --gold:#F2C766; --rust:#A84A27; --line:#EADFCB; --card:#FFFFFF; }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Zen Maru Gothic', system-ui, sans-serif; font-size: 17px; line-height: 1.6; -webkit-text-size-adjust: 100%; }
 a { color: var(--rust); }
 .wrap { max-width: 680px; margin: 0 auto; padding: 0 16px; }
-header.top { background: var(--navy); color: var(--bg); border-radius: 0 0 28px 28px; padding: 36px 0 30px; }
+header.top { background: var(--navy); color: var(--bg); border-radius: 0 0 28px 28px; padding: 18px 0 28px; }
+.bar { display: flex; justify-content: flex-end; margin-bottom: 14px; }
+a.lang { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border: 1px solid #7A84A6; border-radius: 999px; color: var(--bg); text-decoration: none; font-size: 14px; font-weight: 700; }
 .kicker { margin: 0; font-size: 13px; letter-spacing: 3px; font-weight: 700; color: var(--gold); }
-h1 { margin: 8px 0 14px; font-family: 'Zen Old Mincho', serif; font-size: 34px; line-height: 1.2; }
+h1 { margin: 6px 0 12px; font-family: 'Zen Old Mincho', serif; font-size: 32px; line-height: 1.25; }
 .lede { margin: 0 0 10px; color: #E4E1D8; }
-.fact { margin: 16px 0 0; font-weight: 700; color: var(--gold); }
-a.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: var(--gold); color: var(--navy); font-weight: 700; text-decoration: none; margin-top: 18px; }
-section.part { padding: 30px 0 4px; }
+.fact { margin: 14px 0 0; font-weight: 700; color: var(--gold); }
+a.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: var(--gold); color: var(--navy); font-weight: 700; text-decoration: none; margin-top: 16px; }
+nav.jump { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+nav.jump ul { list-style: none; margin: 0 auto; padding: 10px 16px; max-width: 680px; display: flex; gap: 8px; overflow-x: auto; }
+nav.jump a { display: inline-flex; align-items: center; white-space: nowrap; text-decoration: none; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 0 14px; font-size: 15px; font-weight: 700; min-height: 40px; }
+section.part { padding: 28px 0 6px; scroll-margin-top: 64px; }
 .label { margin: 0 0 4px; font-size: 13px; letter-spacing: 3px; font-weight: 700; color: var(--rust); }
-h2 { margin: 0 0 10px; font-family: 'Zen Old Mincho', serif; font-size: 26px; line-height: 1.25; }
+h2 { margin: 0 0 10px; font-family: 'Zen Old Mincho', serif; font-size: 26px; line-height: 1.3; }
 p { margin: 0 0 12px; }
 .sub { color: var(--sub); }
-.small { font-size: 15px; color: var(--muted); }
-.plan { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px; margin: 14px 0; }
+.small, .note, .foot { font-size: 15px; color: var(--muted); }
+h3 { margin: 22px 0 10px; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: var(--rust); display: flex; align-items: center; gap: 8px; }
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; flex: none; }
+ul.places { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+li.place, .card, .plan { background: var(--card); border: 1px solid var(--line); border-radius: 16px; }
+li.place { padding: 12px 16px 14px; }
+a.pl { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; text-decoration: none; color: var(--ink); min-height: 44px; }
+.nm { font-size: 19px; font-weight: 700; }
+.tag { font-size: 12px; font-weight: 700; color: var(--rust); border: 1px solid #C9A38F; border-radius: 999px; padding: 1px 8px; }
+.go { margin-left: auto; font-size: 14px; font-weight: 700; color: var(--rust); }
+.desc { margin: 2px 0 0; color: var(--sub); }
+.info { margin: 4px 0 0; font-size: 14px; font-weight: 700; color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.card { padding: 14px 16px; }
+.w { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.ro { font-family: 'Zen Old Mincho', serif; font-size: 21px; font-weight: 700; }
+.ja { font-size: 16px; color: var(--muted); }
+.me { margin: 4px 0 0; color: var(--sub); }
+ul.small-list { background: var(--card); border: 1px solid var(--line); border-radius: 16px; margin: 0; padding: 14px 16px 14px 34px; display: flex; flex-direction: column; gap: 8px; color: var(--sub); }
+.allergy { background: var(--card); border: 2px dashed #C9A38F; border-radius: 16px; padding: 16px; }
+.allergy .head { margin: 0 0 4px; font-size: 22px; font-weight: 700; }
+.allergy .head .en { display: block; font-size: 15px; font-weight: 400; color: var(--muted); }
+.chks { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 12px; margin: 12px 0 8px; }
+label.chk { display: flex; align-items: center; gap: 10px; min-height: 44px; cursor: pointer; }
+label.chk input { width: 24px; height: 24px; flex: none; accent-color: var(--navy); }
+label.chk .jp { font-size: 19px; font-weight: 700; }
+label.chk .en { font-size: 14px; color: var(--muted); }
+.plan { padding: 18px; margin: 14px 0; }
 .plan .meta { margin: 0 0 2px; font-size: 13px; letter-spacing: 2px; font-weight: 700; color: var(--muted); }
-.plan h3 { margin: 0 0 8px; font-family: 'Zen Old Mincho', serif; font-size: 23px; }
+.plan h3 { margin: 0 0 8px; font-family: 'Zen Old Mincho', serif; font-size: 23px; letter-spacing: 0; text-transform: none; color: var(--ink); }
 .price { margin: 10px 0 4px; font-size: 20px; font-weight: 700; }
 .price span { font-size: 15px; font-weight: 400; color: var(--muted); }
 .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-top: 12px; }
-.two .opt { border-top: 1px solid var(--line); padding-top: 12px; }
+.opt { border-top: 1px solid var(--line); padding-top: 12px; }
 .opt h4 { margin: 0 0 6px; font-size: 14px; letter-spacing: 3px; color: var(--rust); }
 ul.list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; color: var(--sub); }
 .ph { display: none; margin: 12px 0; height: 200px; border: 2px dashed #C9A38F; border-radius: 16px; background: #F3EBDB; align-items: center; justify-content: center; text-align: center; padding: 12px; }
@@ -46,16 +75,18 @@ ul.list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; 
 .book { background: var(--navy); color: var(--bg); border-radius: 20px; padding: 24px 20px; margin: 30px 0 0; }
 .book h2 { color: var(--bg); }
 .book p { color: #E4E1D8; }
+.book .small { color: #C9C6BD; margin-top: 14px; }
+:lang(ja) h1, :lang(ja) h2, :lang(ja) .lede, :lang(ja) .fact { word-break: auto-phrase; }
 footer { padding: 24px 0 40px; font-size: 14px; color: var(--muted); }
 </style>
 </head>
 <body>
 <header class="top">
 <div class="wrap">
+<div class="bar"><a class="lang" href="ja/" hreflang="ja" lang="ja">日本語</a></div>
 <p class="kicker">KICHIJOJI &amp; MITAKA · WITH LOCALS</p>
 <h1>A night at the places we call our own.</h1>
-<p class="lede">Not a tour. More like a friend taking you to their regular places.</p>
-<p class="lede">For your first trip to Tokyo, or your tenth. Small bars and restaurants that are hard to walk into on your own, with one or both of us, locals who are regulars there.</p>
+<p class="lede">Not a tour. More like a friend taking you to their regular places.</p><p class="lede">For your first trip to Tokyo, or your tenth. Small bars and restaurants that are hard to walk into on your own, with one or both of us, locals who are regulars there.</p>
 <p class="fact">For 2–4 adults (20+) · from ¥30,000 per person, all in</p>
 <a class="btn" href="#book">Tell us about your night</a>
 </div>
@@ -67,73 +98,29 @@ footer { padding: 24px 0 40px; font-size: 14px; color: var(--muted); }
 <h2>Kai &amp; Maya</h2>
 <figure class="ph" aria-hidden="true"><span>PHOTO · Kai &amp; Maya</span></figure>
 <p>We are a married couple who have lived in Kichijoji for 15 years. One izakaya changes its menu every day, so we are there about three nights a week. A friend from the Netherlands once made time on a Tokyo business trip just to come back to it. At a family-run Chinese restaurant nearby, Maya chats with the family in Chinese. We sit at the counter when there is room, introduce you to the owners, and help you talk with them.</p>
-<p class="sub">Why you won't find them on your own: phone-only reservations, Japanese-only menus, doors that are easy to miss.</p>
+<p class="sub">Why you won&#x27;t find them on your own: phone-only reservations, Japanese-only menus, doors that are easy to miss.</p>
 </section>
 <section class="part">
 <p class="label">WAYS TO SPEND THE EVENING</p>
 <h2>Private, unhurried, and all taken care of.</h2>
-<p class="sub">Just your group of 2 to 4, all 20 or older, at small places, many of which take phone bookings only. Food and two to three drinks at every place, booking, and your hosts all evening are in the price. No booking fees, no tips. We can't offer vegetarian, vegan, halal or allergy-safe meals.</p>
-<div class="plan">
-<p class="meta">2 STOPS · 3 HRS · 2–3 GUESTS</p>
-<h3>Casual Night</h3>
-<figure class="ph" aria-hidden="true"><span>PHOTO · izakaya, then a small bar</span></figure>
-<p class="sub">For example, dinner at a neighborhood izakaya, then a small bar to finish the night. We order for you, introduce the owners, and help you talk with them whenever you like.</p>
-<p class="price">¥30,000 per person <span>· about US$190</span></p>
-<p class="small">All in: food and drinks at both places, booking, and your hosts all evening</p>
-</div>
-<div class="plan">
-<p class="meta">3 STOPS · 4 HRS · 2–4 GUESTS</p>
-<h3>Our Usual Night</h3>
-<figure class="ph" aria-hidden="true"><span>PHOTO · our favorite izakaya</span></figure>
-<p class="sub">For example, Japanese craft gin at a cozy local pub, small home-style dishes, then sake and seasonal food at our favorite izakaya.</p>
-<p class="price">¥35,000 per person <span>· about US$220</span></p>
-<p class="small">All in: food and drinks at all three places, booking, and your hosts all evening</p>
-</div>
+<p class="sub">Just your group of 2 to 4, all 20 or older, at small places, many of which take phone bookings only. Food and two to three drinks at every place, booking, and your hosts all evening are in the price. No booking fees, no tips. We can&#x27;t offer vegetarian, vegan, halal or allergy-safe meals.</p>
+<div class="plan"><p class="meta">2 STOPS · 3 HRS · 2–3 GUESTS</p><h3>Casual Night</h3><figure class="ph" aria-hidden="true"><span>PHOTO · izakaya, then a small bar</span></figure><p class="sub">For example, dinner at a neighborhood izakaya, then a small bar to finish the night. We order for you, introduce the owners, and help you talk with them whenever you like.</p><p class="price">¥30,000 per person <span>· about US$190</span></p><p class="small">All in: food and drinks at both places, booking, and your hosts all evening</p></div>
+<div class="plan"><p class="meta">3 STOPS · 4 HRS · 2–4 GUESTS</p><h3>Our Usual Night</h3><figure class="ph" aria-hidden="true"><span>PHOTO · our favorite izakaya</span></figure><p class="sub">For example, Japanese craft gin at a cozy local pub, small home-style dishes, then sake and seasonal food at our favorite izakaya.</p><p class="price">¥35,000 per person <span>· about US$220</span></p><p class="small">All in: food and drinks at all three places, booking, and your hosts all evening</p></div>
 <p class="small">Many other combinations are possible, such as a pub with plenty of whisky, craft beer, or a bistro with good wine; we pick the stops to match what you like, within the evenings and prices above. Wine lovers: we can build an evening around wine, though not every stop will be a wine bar. Rum lovers can make their last stop a bar with over 500 rums, opened in 1997 by the founder of the Japan Rum Association.</p>
-<div class="plan">
-<p class="meta">ONE PLACE · 3 HRS · 2 OR 4 GUESTS · LUNCH TOO</p>
-<h3>One Long Dinner</h3>
-<p class="sub">Both counters are run by couples who love to talk. You watch them cook right in front of you, often after they show you the ingredients, and we stay with you to translate whenever they have a moment to chat. Come as two and you sit among the regulars; come as four and the counter is all yours. On weekends, lunch works too.</p>
-<div class="two">
-<div class="opt">
-<h4>SUSHI</h4>
-<figure class="ph" aria-hidden="true"><span>PHOTO · sushi counter (after the shop&#x27;s OK)</span></figure>
-<p class="sub">A cozy counter in Mitaka, with fresh and aged fish from Toyosu. Plates like hairy crab and shirako tempura, served to suit each of you, then sushi you each pick piece by piece, off the menu we arrange with the chef.</p>
-<p class="price">¥40,000 per person <span>· about US$255</span></p>
-<p class="small">Includes: about 13 small plates and sushi each, a beer and about 360 ml of sake each</p>
-</div>
-<div class="opt">
-<h4>FRENCH</h4>
-<figure class="ph" aria-hidden="true"><span>PHOTO · charcoal-grill French (after the shop&#x27;s OK)</span></figure>
-<p class="sub">A charcoal grill in Kichijoji, known for seasonal game. A course might bring Nagano-made cured ham, a starter, soup, a main you choose, then dessert or, like us, cheese and more Burgundy.</p>
-<p class="price">¥50,000 per person <span>· about US$320</span></p>
-<p class="small">Includes: the course and wine pairing</p>
-</div>
-</div>
-<p class="small">All in, both: booking and your hosts all evening (we pay for our own meal). Anything extra? Pay the difference at the shop.</p>
-</div>
+<div class="plan"><p class="meta">ONE PLACE · 3 HRS · 2 OR 4 GUESTS · LUNCH TOO</p><h3>One Long Dinner</h3><p class="sub">Both counters are run by couples who love to talk. You watch them cook right in front of you, often after they show you the ingredients, and we stay with you to translate whenever they have a moment to chat. Come as two and you sit among the regulars; come as four and the counter is all yours. On weekends, lunch works too.</p>
+<div class="two"><div class="opt"><h4>SUSHI</h4><figure class="ph" aria-hidden="true"><span>PHOTO · sushi counter (after the shop&#x27;s OK)</span></figure><p class="sub">A cozy counter in Mitaka, with fresh and aged fish from Toyosu. Plates like hairy crab and shirako tempura, served to suit each of you, then sushi you each pick piece by piece, off the menu we arrange with the chef.</p><p class="price">¥40,000 per person <span>· about US$255</span></p><p class="small">Includes: about 13 small plates and sushi each, a beer and about 360 ml of sake each</p></div><div class="opt"><h4>FRENCH</h4><figure class="ph" aria-hidden="true"><span>PHOTO · charcoal-grill French (after the shop&#x27;s OK)</span></figure><p class="sub">A charcoal grill in Kichijoji, known for seasonal game. A course might bring Nagano-made cured ham, a starter, soup, a main you choose, then dessert or, like us, cheese and more Burgundy.</p><p class="price">¥50,000 per person <span>· about US$320</span></p><p class="small">Includes: the course and wine pairing</p></div></div>
+<p class="small">All in, both: booking and your hosts all evening (we pay for our own meal). Anything extra? Pay the difference at the shop.</p></div>
 </section>
-<section class="part">
-<p class="label">INCLUDED</p>
-<ul class="list"><li>At each place, a first drink together: we help you order and tell you about the shop and its owners. Your food and drinks stay covered all evening; after that first drink, we pay for our own</li><li>Your hosts close by all evening</li><li>Dinner and drinks at every stop, about two to three drinks per place: beer, highballs, sake, cocktails and more from the regular menu</li><li>Photos of your night, where the shop allows and with the OK of anyone in them</li><li>We settle the bill at each stop</li><li>A pocket booklet of bar words and manners to take home</li></ul>
-</section>
-<section class="part">
-<p class="label">WHEN YOU BOOK</p>
-<ul class="list"><li>Book at least 7 days ahead. Pay by card in advance, but only after we&#x27;ve talked it through with you by email or messages and your date is set; then we send a payment link. Free cancellation until two days before; the day before or on the day, the full price is charged. These small shops turn other guests away to hold your seats</li><li>If we have to cancel, you get a full refund. If a shop has to cancel, we suggest another; if that doesn&#x27;t suit you, we refund in full</li><li>Photos of your group are welcome. Please don&#x27;t film or post the shops or owners for content, reviews or collaborations; these are regulars&#x27; places. There are no free or discounted spots</li></ul>
-</section>
-<section class="part">
-<p class="label">GOOD TO KNOW</p>
-<ul class="list"><li>At each place, the first drink is at your table. After that, on Casual and Usual Nights, it&#x27;s your choice, depending on seating: we stay at your table, or sit close by so you can enjoy your own evening. Wave us over anytime, for example to talk with the owner.</li><li>On Casual and Usual Nights, we meet you at Kichijoji Station around 6 pm, walk between places, and finish by 9 or 10 pm. For One Long Dinner, we wait for you outside the shop; beforehand we send a card with its name and address in Japanese to show a taxi driver. Kichijoji is about 15 minutes from Shinjuku on the JR Chuo Line; getting there is not included. Either One Long Dinner can also be a weekend lunch</li><li>Order what you like, or let the shop choose. Beyond about two to three drinks per place, or for a pricier drink, you pay the difference at the shop; they&#x27;ll tell you before pouring. As a guide, a drink is about ¥700–1,500 at izakaya and ¥1,500–2,500 at bars; rare whiskies or rums can cost more</li><li>Not drinking? The price is the same; the shop makes it up with extra food or soft drinks. Everyone in your group must still be 20 or older, Japan&#x27;s drinking age</li><li>Casual and Usual Nights mean walking between places, and some are up a flight of stairs. If walking or stairs are hard for you, One Long Dinner is the easier choice: one place, no stairs, and you can take a taxi to the door. Tell us either way</li><li>Our shops have small, shared kitchens, so we can&#x27;t offer vegetarian, vegan, halal or allergy-safe meals, even partly. Simple dislikes, like sea urchin or raw oysters? Tell us, and we&#x27;ll order around them</li></ul>
-</section>
+<section class="part"><p class="label">INCLUDED</p><ul class="list"><li>At each place, a first drink together: we help you order and tell you about the shop and its owners. Your food and drinks stay covered all evening; after that first drink, we pay for our own</li><li>Your hosts close by all evening</li><li>Dinner and drinks at every stop, about two to three drinks per place: beer, highballs, sake, cocktails and more from the regular menu</li><li>Photos of your night, where the shop allows and with the OK of anyone in them</li><li>We settle the bill at each stop</li><li>A pocket booklet of bar words and manners to take home</li></ul></section>
+<section class="part"><p class="label">WHEN YOU BOOK</p><ul class="list"><li>Book at least 7 days ahead. Pay by card in advance, but only after we&#x27;ve talked it through with you by email or messages and your date is set; then we send a payment link. Free cancellation until two days before; the day before or on the day, the full price is charged. These small shops turn other guests away to hold your seats</li><li>If we have to cancel, you get a full refund. If a shop has to cancel, we suggest another; if that doesn&#x27;t suit you, we refund in full</li><li>Photos of your group are welcome. Please don&#x27;t film or post the shops or owners for content, reviews or collaborations; these are regulars&#x27; places. There are no free or discounted spots</li></ul></section>
+<section class="part"><p class="label">GOOD TO KNOW</p><ul class="list"><li>At each place, the first drink is at your table. After that, on Casual and Usual Nights, it&#x27;s your choice, depending on seating: we stay at your table, or sit close by so you can enjoy your own evening. Wave us over anytime, for example to talk with the owner.</li><li>On Casual and Usual Nights, we meet you at Kichijoji Station around 6 pm, walk between places, and finish by 9 or 10 pm. For One Long Dinner, we wait for you outside the shop; beforehand we send a card with its name and address in Japanese to show a taxi driver. Kichijoji is about 15 minutes from Shinjuku on the JR Chuo Line; getting there is not included. Either One Long Dinner can also be a weekend lunch</li><li>Order what you like, or let the shop choose. Beyond about two to three drinks per place, or for a pricier drink, you pay the difference at the shop; they&#x27;ll tell you before pouring. As a guide, a drink is about ¥700–1,500 at izakaya and ¥1,500–2,500 at bars; rare whiskies or rums can cost more</li><li>Not drinking? The price is the same; the shop makes it up with extra food or soft drinks. Everyone in your group must still be 20 or older, Japan&#x27;s drinking age</li><li>Casual and Usual Nights mean walking between places, and some are up a flight of stairs. If walking or stairs are hard for you, One Long Dinner is the easier choice: one place, no stairs, and you can take a taxi to the door. Tell us either way</li><li>Our shops have small, shared kitchens, so we can&#x27;t offer vegetarian, vegan, halal or allergy-safe meals, even partly. Simple dislikes, like sea urchin or raw oysters? Tell us, and we&#x27;ll order around them</li></ul></section>
 <section class="book" id="book">
 <h2>Interested? Tell us about your night.</h2>
-<p>A short form: dates, group size, which evening, foods you avoid, what you're in the mood for, and how you'd like us to reach you (email, LINE or Instagram). We usually reply within two days. Just have a question? Use the same form.</p>
+<p>A short form: dates, group size, which evening, foods you avoid, what you&#x27;re in the mood for, and how you&#x27;d like us to reach you (email, LINE or Instagram). We usually reply within two days. Just have a question? Use the same form.</p>
 <a class="btn" href="https://tally.so/r/PRdXZd" target="_blank" rel="noopener">Open the form</a>
-<p class="small" style="color:#C9C6BD;margin-top:14px">Or ask the friend who shared this with you. Hosted in English.</p>
+<p class="small">Or ask the friend who shared this with you. Hosted in English.</p>
 </section>
 </main>
-<footer class="wrap">
-<p>Kai &amp; Maya · Kichijoji, Tokyo</p>
-</footer>
+<footer class="wrap"><p>Kai &amp; Maya · Kichijoji, Tokyo</p></footer>
 </body>
 </html>
