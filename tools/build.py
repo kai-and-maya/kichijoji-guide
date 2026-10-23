@@ -334,7 +334,8 @@ WORDS = [
   ("Koen-guchi", "公園口", "The park-side (south) exit of a station. Many izakaya gather around it.", "駅の公園側の出口（南口）。この出口のまわりにも居酒屋が集まっています。")]),
  ("Who's behind the counter", "カウンターの向こうの人", [
   ("Masuta", "マスター", "What regulars call the owner or head bartender of a bar.", "常連がバーの店主やヘッドバーテンダーを呼ぶときのことば。"),
-  ("Taisho", "大将", "What regulars call the chef-owner at a sushi counter or izakaya.", "常連が寿司屋や居酒屋の主人を呼ぶときのことば。")]),
+  ("Taisho", "大将", "What regulars call the chef-owner at a sushi counter or izakaya.", "常連が寿司屋や居酒屋の主人を呼ぶときのことば。"),
+  ("Okami-san", "女将さん", "The woman who runs the front of an izakaya or Japanese restaurant, often alongside the chef. Regulars call her \"Okami-san.\"", "居酒屋や料理屋で、店を切り盛りする女性のこと。大将と並んで店を支えることも多く、常連は「女将さん」と呼びます。")]),
 ]
 MANNERS = [
  ("About tipping", "チップについて", [
