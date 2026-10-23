@@ -18,6 +18,7 @@ a { color: var(--rust); }
 header.top { background: var(--navy); color: var(--bg); border-radius: 0 0 28px 28px; padding: 18px 0 28px; }
 .bar { display: flex; justify-content: flex-end; margin-bottom: 14px; }
 a.lang { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border: 1px solid #7A84A6; border-radius: 999px; color: var(--bg); text-decoration: none; font-size: 14px; font-weight: 700; }
+.tagline { margin: -4px 0 16px; font-family: 'Zen Old Mincho', serif; font-size: 22px; line-height: 1.35; font-weight: 700; color: var(--gold); }
 .kicker { margin: 0; font-size: 13px; letter-spacing: 3px; font-weight: 700; color: var(--gold); }
 h1 { margin: 6px 0 12px; font-family: 'Zen Old Mincho', serif; font-size: 32px; line-height: 1.25; }
 .lede { margin: 0 0 10px; color: #E4E1D8; }
@@ -74,7 +75,7 @@ ul.list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; 
 .book h2 { color: var(--bg); }
 .book p { color: #E4E1D8; }
 .book .small { color: #C9C6BD; margin-top: 14px; }
-:lang(ja) h1, :lang(ja) h2, :lang(ja) .lede, :lang(ja) .fact { word-break: auto-phrase; }
+:lang(ja) h1, :lang(ja) h2, :lang(ja) .tagline, :lang(ja) .lede, :lang(ja) .fact { word-break: auto-phrase; }
 footer { padding: 24px 0 40px; font-size: 14px; color: var(--muted); }
 """
 
@@ -107,12 +108,13 @@ def ph(label):
 def ul(items, cls="list"):
     return f'<ul class="{cls}">' + "".join(f"<li>{e(i)}</li>" for i in items) + "</ul>"
 
-FOOT = '<footer class="wrap"><p>Kai &amp; Maya · Kichijoji, Tokyo</p></footer>\n</body>\n</html>\n'
+FOOT = '<footer class="wrap"><p>Ikitsuke · Kai &amp; Maya · Kichijoji, Tokyo</p></footer>\n</body>\n</html>\n'
 
 # ---------------------------------------------------------------- top page
 TOP = {
  "en": dict(
-  title="A night at our regular places · Kai &amp; Maya",
+  title="Ikitsuke · A night at our regular places in Kichijoji",
+  brand="Ikitsuke", tagline="A night at our regular places in Kichijoji",
   desc="Kai &amp; Maya take small groups to their regular bars and restaurants in Kichijoji and Mitaka, Tokyo.",
   kicker="KICHIJOJI &amp; MITAKA · WITH LOCALS",
   h1="A night at the places we call our own.",
@@ -156,7 +158,8 @@ TOP = {
   book_small="Or ask the friend who shared this with you. Hosted in English.",
  ),
  "ja": dict(
-  title="私たちの行きつけで過ごす夜 · Kai &amp; Maya",
+  title="Ikitsuke（行きつけ）· 吉祥寺の、私たちの行きつけで過ごす夜",
+  brand="Ikitsuke（行きつけ）", tagline="吉祥寺の、私たちの行きつけで過ごす夜",
   desc="吉祥寺・三鷹で、KaiとMayaが少人数のグループを行きつけのバーや飲食店へご案内します。",
   kicker="吉祥寺・三鷹　地元の常連と",
   h1="私たちの行きつけで過ごす夜。",
@@ -219,7 +222,8 @@ def top_page(lang, other):
 <div class="wrap">
 {langbtn(other, lang)}
 <p class="kicker">{T["kicker"]}</p>
-<h1>{e(T["h1"])}</h1>
+<h1>{e(T["brand"])}</h1>
+<p class="tagline">{e(T["tagline"])}</p>
 {ledes}
 <p class="fact">{e(T["fact"])}</p>
 <a class="btn" href="#book">{e(T["cta"])}</a>
@@ -361,7 +365,7 @@ SMALL = {
 ALLERGY = [("肉", "meat"), ("豚肉（豚骨スープも）", "pork, incl. broth"), ("魚（だし・かつお節も）", "fish, incl. dashi"), ("甲殻類・貝・イカ・タコ", "shellfish, squid, octopus"), ("卵", "egg"), ("乳製品", "dairy"), ("小麦", "wheat"), ("そば", "buckwheat"), ("落花生・ナッツ", "peanuts, tree nuts"), ("アルコール（料理酒・みりんも）", "alcohol, incl. in cooking")]
 
 G = {
- "en": dict(title="Our Kichijoji · Kai &amp; Maya", desc="Kai &amp; Maya's own list of places in Kichijoji, with words and manners for the counter.",
+ "en": dict(title="Our Kichijoji · Ikitsuke", desc="Kai &amp; Maya's own list of places in Kichijoji, with words and manners for the counter.",
   kicker="KICHIJOJI · TOKYO", h1="Our Kichijoji",
   lede="Some of the places we actually go, and the words that help at the counter. From Kai &amp; Maya, who have lived in Kichijoji for 15 years.",
   nav=["Places", "Words", "Manners", "Allergies", "Book a night"],
@@ -372,7 +376,7 @@ G = {
   allergy_h="Food allergies", allergy_intro="Tick what you can't eat, then show this screen to the staff.",
   allergy_note="For going on your own; our hosted evenings can't cater for allergies. Small kitchens may not be able to avoid these completely.",
   book_h="Spend an evening with us", book_p="We walk you to our regular places and help with ordering, so you can just enjoy the night.", book_btn="Ask about a date"),
- "ja": dict(title="私たちの吉祥寺 · Kai &amp; Maya", desc="KaiとMayaが実際に通う吉祥寺の店と、カウンターで役立つことばとマナー。",
+ "ja": dict(title="私たちの吉祥寺 · Ikitsuke", desc="KaiとMayaが実際に通う吉祥寺の店と、カウンターで役立つことばとマナー。",
   kicker="吉祥寺・東京", h1="私たちの吉祥寺",
   lede="私たちが実際に通っている店と、カウンターで役立つことば。吉祥寺に住んで15年の、KaiとMayaより。",
   nav=["お店", "ことば", "マナー", "アレルギー", "申し込み"],
