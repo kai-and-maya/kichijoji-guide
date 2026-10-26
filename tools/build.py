@@ -321,7 +321,9 @@ WORDS = [
   ("Shochu", "焼酎", "A spirit made from sweet potato, barley, or rice. Try it with water or soda.", "芋や麦、米から造る蒸留酒。水割りやソーダ割りで。"),
   ("Umeshu", "梅酒", "Sweet plum liqueur, often on the rocks.", "甘い梅のお酒。ロックで飲むことが多いです。"),
   ("Nihonshu", "日本酒", "What Japanese call sake. In Japanese, \"osake\" can mean any alcohol, so ask for nihonshu.", "いわゆるsakeのこと。日本語の「お酒」は酒類全般を指すので、「日本酒」と頼むのが確実です。"),
-  ("Ichi-go", "一合", "A sake measure, about 180 ml. Sake is often ordered by the go.", "日本酒の量の単位で、約180ml。日本酒は合で頼むことが多いです。")]),
+  ("Ichi-go", "一合", "A sake measure, about 180 ml. Sake is often ordered by the go.", "日本酒の量の単位で、約180ml。日本酒は合で頼むことが多いです。"),
+  ("Horoyoi", "ほろ酔い", "Pleasantly tipsy. The best part of the night.", "気持ちよく、少し酔った状態。一晩でいちばん楽しいところです。"),
+  ("Berobero / Hebereke", "べろべろ・へべれけ", "Very drunk. Berobero is the everyday word. Hebereke is a bit old-fashioned and sounds funny, so saying it about yourself might get a laugh. Aim for horoyoi, not these.", "ひどく酔った状態。ふだんよく使うのは「べろべろ」です。「へべれけ」は少し古風で響きがおかしいので、自分のことを言うと笑ってもらえるかもしれません。目指すのは、どちらでもなく、ほろ酔いです。")]),
  ("Food", "料理", [
   ("Tsumami", "つまみ", "Small dishes to go with your drinks.", "お酒に合わせる小皿料理。"),
   ("Obanzai", "おばんざい", "Kyoto-style home cooking, served in small bowls.", "小鉢で出てくる、京都風の家庭料理。"),
