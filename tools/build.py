@@ -301,7 +301,8 @@ WORDS = [
   ("Ikitsuke", "行きつけ", "Your regular place, where the owner knows your name.", "店主が名前を覚えている、いつもの店。"),
   ("Joren", "常連", "A regular. Tonight, that's us, and maybe one day, you.", "常連のこと。今夜は私たち。いつかは、あなたの番です。"),
   ("Hashigo", "はしご", "Hopping from one small place to the next, like climbing a ladder.", "小さな店を一軒ずつ回ること。はしごを上るように。"),
-  ("Tachinomi", "立ち飲み", "A standing bar for a quick, casual drink. Some have a few seats, but most people stand.", "立って気軽に一杯飲める店。席が少しある店もあります。")]),
+  ("Tachinomi", "立ち飲み", "A standing bar for a quick, casual drink. Some have a few seats, but most people stand.", "立って気軽に一杯飲める店。席が少しある店もあります。"),
+  ("Nominication", "飲みニケーション", "Nomu (to drink) + communication. The idea that sharing a few drinks opens up real conversation. It's usually said about drinks with coworkers, so try it when you hit it off with a local at a bar. It might get a laugh.", "「飲む」と「コミュニケーション」を合わせた言葉。一緒に飲むと打ち解けて本音で話せる、という考え方です。職場の飲み会で使うことが多いので、飲み屋で出会った日本人と盛り上がったときに使うと、ウケるかもしれません。")]),
  ("Walking in", "お店に入ったら", [
   ("Irasshaimase", "いらっしゃいませ", "\"Welcome!\" No need to answer. A smile and a nod is enough.", "「ようこそ」の意味です。返事はいりません。笑顔でうなずけば十分です。"),
   ("Oshibori", "おしぼり", "A hot or cold towel to wipe your hands before you eat.", "食べる前に手をふく、温かいか冷たいタオル。"),
