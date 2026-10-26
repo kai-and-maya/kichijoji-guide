@@ -315,7 +315,7 @@ WORDS = [
   ("Sumimasen", "すみません", "\"Excuse me.\" Say it to call the staff over. A raised hand helps too.", "店の人を呼ぶときの一言。軽く手を挙げると伝わりやすいです。"),
   ("Kore, kudasai", "これ、ください", "\"This one, please.\" Point at the menu as you say it.", "メニューを指さしながら言えば、注文できます。")]),
  ("Drinks", "飲み物", [
-  ("Nama", "生", "Draft beer. \"Nama, kudasai\" gets you one.", "生ビール。「生、ください」で出てきます。"),
+  ("Nama", "生", "Draft beer. \"Nama, kudasai\" gets you one. \"Toriaezu nama\" (\"a beer for now\") is the classic first order, before anyone has looked at the menu.", "生ビール。「生、ください」で出てきます。メニューを見る前に「とりあえず生」と頼むのが、昔からの定番です。"),
   ("Highball", "ハイボール", "Whisky and soda. A favorite in bars across Japan.", "ウイスキーのソーダ割り。日本中のバーで人気です。"),
   ("Hiya / Atsukan", "冷や・熱燗", "Sake at room temperature, or served warm.", "常温の日本酒と、温めた日本酒。"),
   ("Shochu", "焼酎", "A spirit made from sweet potato, barley, or rice. Try it with water or soda.", "芋や麦、米から造る蒸留酒。水割りやソーダ割りで。"),
