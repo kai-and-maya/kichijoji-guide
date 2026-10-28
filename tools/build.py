@@ -337,7 +337,7 @@ WORDS = [
  ("Food", "料理", [
   ("Tsumami", "つまみ", "Small dishes to go with your drinks.", "お酒に合わせる小皿料理。"),
   ("Obanzai", "おばんざい", "Kyoto-style home cooking, served in small bowls.", "小鉢で出てくる、京都風の家庭料理。"),
-  ("Shime", "締め", "The last dish of the night, often noodles or rice.", "その夜の最後の一品。麺やご飯が多いです。")]),
+  ("Shime", "締め", "The last dish of the night, often noodles or rice. Some locals stop at a ramen shop on the way home.", "その夜の最後の一品。麺やご飯が多いです。地元の人は、帰りにラーメン店に寄ることもあります。")]),
  ("The regulars' way", "常連のやり方", [
   ("Kanpai", "乾杯", "Cheers. Wait until everyone has a glass before the first sip.", "全員のグラスがそろってから、最初の一口を。"),
   ("Itadakimasu", "いただきます", "Said before you eat or drink. Thanks for the food.", "食べる前に言うことば。料理へのお礼です。"),
