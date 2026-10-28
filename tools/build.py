@@ -272,7 +272,7 @@ CATNAME = {
  "en": {"dinner": "Dinner", "beer": "Pubs", "tachi": "Tachinomi &amp; casual", "bars": "Bars", "ramen": "Ramen", "udon": "Udon", "cafe": "Cafes", "walk": "Walk around"},
  "ja": {"dinner": "食事", "beer": "パブ", "tachi": "立ち飲み・気軽な店", "bars": "バー", "ramen": "ラーメン", "udon": "うどん", "cafe": "カフェ・喫茶店", "walk": "散歩"},
 }
-BARFOOT = {"en": "All three are in the Kichijoji Bar Map, if you want to keep going.", "ja": "3軒とも吉祥寺バーマップに載っています。"}
+BARFOOT = {"en": "All six are in the Kichijoji Bar Map, if you want to keep going.", "ja": "6軒とも吉祥寺バーマップに載っています。"}
 
 # key, place_id, en(name, desc, tag, info), ja(name, desc, tag, info)
 PLACES = [
@@ -284,10 +284,15 @@ PLACES = [
  ("dinner", "ChIJR7bDwJ7vGGARxRuSkxG2EmA", ("Pétillant", "A charcoal-grill French counter with a strong wine list, for a special night.", "", "¥¥¥ · Lunch 11:30, dinner 17:00 · Irregular days off"), ("ペティヤン", "炭火焼きが中心のカウンターフレンチ。ワインも豊富で、特別な夜に。", "", "¥¥¥・昼11:30、夜17:00から・不定休")),
  ("dinner", "ChIJXxyoCrDvGGARGxQYtLLL0hI", ("Sushi Shigeno", "A small sushi counter in Mitaka, one stop west. Sushi and small dishes, with about ten sakes.", "", "¥¥¥ · From 17:00 · Closed Thu · Phone booking only"), ("鮨繁乃", "三鷹の小さな鮨店（吉祥寺から1駅）。鮨とつまみを自由に頼めて、日本酒は約10種類。", "", "¥¥¥・17:00から・木曜休み・予約は電話のみ")),
  ("beer", "ChIJjaAMOjnuGGAR25JBaJGSS0w", ("wigtown", "A British pub with Japanese craft gin, whisky and Scottish beer. No smoking inside.", "", "¥¥ · From 17:00 (Sat, Sun 14:00) · Closed Thu · Card OK"), ("wigtown", "国産クラフトジン、ウイスキー、スコットランドのビールがある英国風パブ。店内禁煙です。", "", "¥¥・17:00から（土日は14:00）・木曜休み・カード可")),
+ ("beer", "ChIJ4VS8I0juGGAREl39wbFFA2c", ("ROGUE", "A British pub on the way to the park.", "", "¥¥ · From 17:00 (Sat 15:00, Sun 13:00) · Closed Tue · Card OK"), ("ローグ", "公園へ向かう途中にある英国風パブ。", "", "¥¥・17:00から（土は15:00、日は13:00）・火曜休み・カード可")),
+ ("tachi", "ChIJk1sz1wTvGGARN1Tv0A4GNtI", ("Ben's Slop Shop", "Craft beer, a short walk northwest of the station.", "", "¥¥ · From 15:00 · Closed Mon, Tue · Card OK"), ("Ben's Slop Shop", "駅から北西へ少し歩いたところのクラフトビール。", "", "¥¥・15:00から・月・火休み・カード可")),
  ("tachi", "ChIJheMTbZvvGGARZXsCFA8ABf8", ("Craft Beer TOCA", "Craft beer at the edge of Inokashira Park, plus a little sake.", "", "¥¥ · From 16:30 (Mon, Tue 18:00) · Open daily · Card OK"), ("Craft Beer TOCA", "井の頭公園のそばのクラフトビール。日本酒も少しあります。", "", "¥¥・16:30から（月・火は18:00）・毎日営業・カード可")),
  ("bars", "ChIJ4eaW13PvGGARlWTlOiYZ8o8", ("HARD SHAKE BAR130", "A cocktail bar on the third floor above Harmonica Yokocho, away from the noise.", "", "¥¥ · From 17:00 (Sat, Sun 16:00) · Closed Thu · 3F"), ("HARD SHAKE BAR130", "ハモニカ横丁の3階にある、喧騒から離れたカクテルバー。", "", "¥¥・17:00から（土日は16:00）・木曜休み・3階")),
  ("bars", "ChIJU4WEQh7vGGARmYKvSzlEiD4", ("BUILD BAR130", "The sister bar of HARD SHAKE BAR130, focused on craft gin and mezcal.", "", "¥¥ · From 20:00 · Closed Sun · 2F"), ("BUILD BAR130", "HARD SHAKE BAR130の姉妹店。クラフトジンとメスカルが中心です。", "", "¥¥・20:00から・日曜休み・2階")),
  ("bars", "ChIJYUDrDkfuGGARfveMJGIk5xI", ("SCREW DRIVER", "A rum bar with more than 500 rums, open since 1997.", "", "¥¥ · From 19:00 (Sat 17:00) · Closed Sun · 4F"), ("SCREW DRIVER", "500種類以上のラムがそろうバー。1997年に開店しました。", "", "¥¥・19:00から（土は17:00）・日曜休み・4階")),
+ ("bars", "ChIJM8BkYkfuGGARIk7nBeJcAao", ("BAR FORT", "A bar with cigars, open until 3 am.", "", "¥¥ · From 19:00 · Open daily · 2F"), ("BAR FORT", "シガーもあり、深夜3時まで開いているバー。", "", "¥¥・19:00から・毎日営業・2階")),
+ ("bars", "ChIJgQzMFUjuGGARpagY4QcBztw", ("BAR Zebec", "A basement bar near the south exit.", "", "¥¥ · From 18:00 · Open daily · B1"), ("BAR Zebec", "南口の近くにある地下のバー。", "", "¥¥・18:00から・毎日営業・地下1階")),
+ ("bars", "ChIJ5bep_jjuGGARSZJCKRCaKy8", ("Seek Door", "A basement bar that has been here for 39 years.", "", "¥¥ · From 19:00 · Closed Sun · B1"), ("Seek Door", "39年続く地下のバー。", "", "¥¥・19:00から・日曜休み・地下1階")),
  ("ramen", "ChIJDTPucdPvGGARUyUK4yYl8QE", ("Ramen Sawada", "Light, clear chicken broth.", "", "¥ · From 11:00 · Open daily"), ("らぁ麺 さわ田", "鶏清湯の淡麗系。", "", "¥・11:00から・毎日営業")),
  ("ramen", "ChIJVUlwv0fuGGAREfKscLN6LZg", ("Hope-ken", "The original back-fat pork-soy.", "", "¥ · From 11:00 · Closed Tue, Wed"), ("ホープ軒", "背脂チャッチャ系の元祖。", "", "¥・11:00から・火・水休み")),
  ("ramen", "ChIJZ1L290fuGGARHN_FQIq56HI", ("Tsukemen Enji", "Pioneer of vegepota tsukemen: rich pork-and-seafood broth blended with vegetable purée.", "", "¥ · From 11:00 · Open daily"), ("つけ麺 えん寺", "濃厚な豚骨魚介に野菜ペーストを合わせた、ベジポタつけ麺の先駆け。", "", "¥・11:00から・毎日営業")),
@@ -295,6 +300,7 @@ PLACES = [
  ("udon", "ChIJizSBRkjuGGARV0tn49N9AaU", ("Ibuki Udon", "Udon. Order at the ticket machine (it has English). Mostly standing.", "", "¥ · From 11:00 · Open daily"), ("いぶきうどん", "うどん。券売機で注文します（英語表示もあり）。ほとんど立ち食いです。", "", "¥・11:00から・毎日営業")),
  ("cafe", "ChIJG-aoZEjuGGARDr4v62ZwbXo", ("Kugutsuso", "A retro coffee house, known for its curry.", "", "¥ · From 10:00 · Open daily · B1"), ("くぐつ草", "レトロな喫茶店。カレーが人気です。", "", "¥・10:00から・毎日営業・地下1階")),
  ("cafe", "ChIJe-TeakzuGGAR7ZrlpUdY69g", ("LIGHT UP COFFEE", "Third-wave coffee; you can buy their beans too. A bit far from the station, so usually less crowded.", "", "¥ · From 9:00 · Open daily · Card OK"), ("LIGHT UP COFFEE", "サードウェーブ系のコーヒー店。オリジナルの豆も買えます。駅から少し遠いぶん、比較的すいています。", "", "¥・9:00から・毎日営業・カード可")),
+ ("cafe", "ChIJnc16D0juGGARsyv8j4saRwk", ("Yuria Pemuperu", "A Showa-era kissaten, known for pudding and cream soda.", "", "¥ · From 11:30 · Open daily"), ("ゆりあぺむぺる", "昭和の喫茶店。プリンとクリームソーダが人気です。", "", "¥・11:30から・毎日営業")),
  ("walk", "ChIJLWaVdDXuGGART_Pg1R3CZ4A", ("Inokashira Park", "A big park with a pond and swan boats, a few minutes south of the station.", "", ""), ("井の頭恩賜公園", "池とスワンボートのある大きな公園。駅から南へ数分です。", "", "")),
  ("walk", "ChIJZXco9RXvGGARYzRNqY-U-o8", ("Harmonica Yokocho", "Narrow lanes of tiny bars and eateries, right by the station's north exit.", "", ""), ("ハモニカ横丁", "小さな飲み屋や食堂が並ぶ細い路地。駅の北口のすぐそばです。", "", "")),
 ]
