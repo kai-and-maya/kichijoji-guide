@@ -4,6 +4,7 @@ import html, os, sys, urllib.parse
 ROOT = sys.argv[1]
 e = html.escape
 FORM = "https://tally.so/r/PRdXZd"
+MYMAP = "https://www.google.com/maps/d/viewer?mid=1Sehfn4IwGrCyISn-j6BJc1h316RerLg"
 
 def maps(q, pid):
     return "https://www.google.com/maps/search/?" + urllib.parse.urlencode({"api": "1", "query": q, "query_place_id": pid})
@@ -46,6 +47,8 @@ a.pl { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; text-
 .go { margin-left: auto; font-size: 14px; font-weight: 700; color: var(--rust); }
 .desc { margin: 2px 0 0; color: var(--sub); }
 .info { margin: 4px 0 0; font-size: 14px; font-weight: 700; color: var(--muted); }
+.maplink { margin: -4px 0 12px; }
+.maplink a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; }
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
 .card { padding: 14px 16px; }
 .w { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
@@ -382,7 +385,7 @@ G = {
   kicker="KICHIJOJI · TOKYO", h1="Our Kichijoji",
   lede="Some of the places we actually go, and the words that help at the counter. From Kai &amp; Maya, who have lived in Kichijoji for 15 years.",
   nav=["Places", "Words", "Manners", "Allergies", "Book a night"],
-  places_h="Places", places_intro="Most are within a 10-minute walk of the station. Tap a name to open it in Google Maps.",
+  places_h="Places", places_intro="Most are within a 10-minute walk of the station. Tap a name to open it in Google Maps.", places_map="See all the places on one map (Google My Maps)",
   places_note="Per person with drinks: ¥ up to ¥3,000 · ¥¥ ¥3,000–6,000 · ¥¥¥ over ¥6,000. 2F = one floor up; B1 = basement. Times are weekday opening times. Hours and days off can change, so check before you go.",
   go="Map ›", words_h="Words from the bar counter", words_intro="Point at the Japanese, or say it out loud. The owners will smile either way.",
   manners_h="Good manners at the counter", manners_intro="What regulars do.",
@@ -393,7 +396,7 @@ G = {
   kicker="吉祥寺・東京", h1="私たちの吉祥寺",
   lede="私たちが実際に通っている店と、カウンターで役立つことば。吉祥寺に住んで15年の、KaiとMayaより。",
   nav=["お店", "ことば", "マナー", "アレルギー", "申し込み"],
-  places_h="お店", places_intro="ほとんどが駅から歩いて10分以内です。店名を押すとGoogleマップが開きます。",
+  places_h="お店", places_intro="ほとんどが駅から歩いて10分以内です。店名を押すとGoogleマップが開きます。", places_map="すべての店を1枚の地図で見る（Googleマイマップ）",
   places_note="価格は1人あたり、お酒込みの目安です。¥は3,000円まで。¥¥は3,000〜6,000円。¥¥¥は6,000円以上です。時刻は平日の開店時間です。営業時間や定休日は変わることがあるので、行く前に確かめてください。",
   go="地図 ›", words_h="カウンターで使うことば", words_intro="日本語を指さすか、声に出して言ってみてください。どちらでも、店主はきっと笑顔になります。",
   manners_h="カウンターでのマナー", manners_intro="常連がしていること。",
@@ -442,6 +445,7 @@ def guide_page(lang, other):
 <section class="part" id="places">
 <h2>{e(T["places_h"])}</h2>
 <p class="sub">{e(T["places_intro"])}</p>
+<p class="maplink"><a href="{e(MYMAP)}" target="_blank" rel="noopener">{e(T["places_map"])}</a></p>
 <p class="note">{e(T["places_note"])}</p>
 {"".join(secs)}
 </section>
