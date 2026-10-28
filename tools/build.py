@@ -23,6 +23,7 @@ a.lang { display: inline-flex; align-items: center; min-height: 40px; padding: 0
 .kicker { margin: 0; font-size: 13px; letter-spacing: 3px; font-weight: 700; color: var(--gold); }
 h1 { margin: 4px 0 10px; font-family: 'Zen Old Mincho', serif; font-size: clamp(32px, 9vw, 40px); line-height: 1.2; color: var(--bg); }
 .lede { margin: 0 0 10px; color: #D4D1C8; }
+.define { margin: -4px 0 14px; font-size: 15px; color: #D4D1C8; }
 .fact { margin: 16px 0 0; padding-top: 12px; border-top: 1px solid #3A4568; font-size: 14px; font-weight: 700; color: var(--bg); }
 a.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: var(--gold); color: var(--navy); font-weight: 700; text-decoration: none; margin-top: 16px; }
 nav.jump { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
@@ -381,8 +382,8 @@ SMALL = {
 ALLERGY = [("肉", "meat"), ("豚肉（豚骨スープも）", "pork, incl. broth"), ("魚（だし・かつお節も）", "fish, incl. dashi"), ("甲殻類・貝・イカ・タコ", "shellfish, squid, octopus"), ("卵", "egg"), ("乳製品", "dairy"), ("小麦", "wheat"), ("そば", "buckwheat"), ("落花生・ナッツ", "peanuts, tree nuts"), ("アルコール（料理酒・みりんも）", "alcohol, incl. in cooking")]
 
 G = {
- "en": dict(title="Our Kichijoji · Ikitsuke", desc="Kai &amp; Maya's own list of places in Kichijoji, with words and manners for the counter.",
-  kicker="KICHIJOJI · TOKYO", h1="Our Kichijoji",
+ "en": dict(title="Our Ikitsuke · Kichijoji", desc="Kai &amp; Maya's own list of places in Kichijoji, with words and manners for the counter.",
+  kicker="KICHIJOJI · TOKYO", h1="Our Ikitsuke", define="Ikitsuke (ee-kee-tsoo-keh): a place you keep going back to, where they know you.",
   lede="Some of the places we actually go, and the words that help at the counter. From Kai &amp; Maya, who have lived in Kichijoji for 15 years.",
   nav=["Places", "Words", "Manners", "Allergies", "Book a night"],
   places_h="Places", places_intro="Most are within a 10-minute walk of the station. Tap a name to open it in Google Maps.", places_map="See all the places on one map (Google My Maps)",
@@ -392,8 +393,8 @@ G = {
   allergy_h="Food allergies", allergy_intro="Tick what you can't eat, then show this screen to the staff.",
   allergy_note="For going on your own; our hosted evenings can't cater for allergies. Small kitchens may not be able to avoid these completely.",
   book_h="Spend an evening with us", book_p="We walk you to our regular places and help with ordering, so you can just enjoy the night.", book_btn="Ask about a date"),
- "ja": dict(title="私たちの吉祥寺 · Ikitsuke", desc="KaiとMayaが実際に通う吉祥寺の店と、カウンターで役立つことばとマナー。",
-  kicker="吉祥寺・東京", h1="私たちの吉祥寺",
+ "ja": dict(title="私たちの行きつけ · 吉祥寺", desc="KaiとMayaが実際に通う吉祥寺の店と、カウンターで役立つことばとマナー。",
+  kicker="吉祥寺・東京", h1="私たちの行きつけ",
   lede="私たちが実際に通っている店と、カウンターで役立つことば。吉祥寺に住んで15年の、KaiとMayaより。",
   nav=["お店", "ことば", "マナー", "アレルギー", "申し込み"],
   places_h="お店", places_intro="ほとんどが駅から歩いて10分以内です。店名を押すとGoogleマップが開きます。", places_map="すべての店を1枚の地図で見る（Googleマイマップ）",
@@ -431,13 +432,14 @@ def guide_page(lang, other):
         secs.append(f'<section class="cat"><h3><span class="dot" style="background:{COLORS[key]}"></span>{CATNAME[lang][key]}</h3><ul class="places">{"".join(rows)}</ul>{foot}</section>')
     nav = "".join(f'<li><a href="#{a}">{e(l)}</a></li>' for a, l in zip(["places", "words", "manners", "allergy", "book"], T["nav"]))
     st, sl = SMALL[lang]
+    define_html = f'<p class="define">{e(T["define"])}</p>\n' if T.get("define") else ""
     chks = "".join(f'<label class="chk"><input type="checkbox"><span><span class="jp" lang="ja">{e(j)}</span> <span class="en" lang="en">{e(en)}</span></span></label>' for j, en in ALLERGY)
     return head(lang, T["title"], T["desc"]) + f"""<header class="top">
 <div class="wrap">
 {langbtn(other, lang)}
 <p class="kicker">{e(T["kicker"])}</p>
 <h1>{e(T["h1"])}</h1>
-<p class="lede">{T["lede"]}</p>
+{define_html}<p class="lede">{T["lede"]}</p>
 </div>
 </header>
 <nav class="jump" aria-label="Sections"><ul>{nav}</ul></nav>
