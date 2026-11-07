@@ -77,6 +77,8 @@ ul.list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; 
 .ph { display: none; margin: 12px 0; height: 200px; border: 2px dashed #C9A38F; border-radius: 16px; background: #F3EBDB; align-items: center; justify-content: center; text-align: center; padding: 12px; }
 .ph span { font-size: 14px; font-weight: 700; letter-spacing: 1px; color: var(--rust); }
 .draft .ph { display: flex; }
+.ph.photo { padding: 0; border: 0; overflow: hidden; background: none; }
+.ph.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .book { background: var(--navy); color: var(--bg); border-radius: 20px; padding: 24px 20px; margin: 30px 0 0; }
 .book h2 { color: var(--bg); }
 .book p { color: #D4D1C8 !important; }
@@ -108,8 +110,16 @@ def langbtn(href, lang):
     hl = "ja" if lang == "en" else "en"
     return f'<div class="bar"><a class="lang" href="{href}" hreflang="{hl}" lang="{hl}">{label}</a></div>'
 
-def ph(label):
+def ph(label, img=None):
+    # img = (src, alt): a real photo, still shown only with ?draft until the frames are made public
+    if img:
+        return f'<figure class="ph photo"><img src="{img[0]}" alt="{e(img[1])}" loading="lazy"></figure>'
     return f'<figure class="ph" aria-hidden="true"><span>{e(label)}</span></figure>'
+
+# Photos the shop has agreed to (Petillant: 2026-11-07, owner's blanket OK)
+PHOTO = {
+  "french": ("img/petillant.jpg", {"en": "The owner-chef of Pétillant saucing a plate at the counter", "ja": "ペティヤンの店主が、カウンターの前で皿にソースをかけているところ"}),
+}
 
 def ul(items, cls="list"):
     return f'<ul class="{cls}">' + "".join(f"<li>{e(i)}</li>" for i in items) + "</ul>"
@@ -215,13 +225,15 @@ def plan_block(p, phl):
     return (f'<div class="plan"><p class="meta">{e(meta)}</p><h3>{e(h)}</h3>{ph(phl)}<p class="sub">{e(desc)}</p>'
             f'<p class="price">{e(price)} <span>· {e(usd)}</span></p><p class="small">{e(small)}</p></div>')
 
-def opt_block(o, phl):
+def opt_block(o, phl, img=None):
     h, desc, price, usd, small = o
-    return (f'<div class="opt"><h4>{e(h)}</h4>{ph(phl)}<p class="sub">{e(desc)}</p>'
+    return (f'<div class="opt"><h4>{e(h)}</h4>{ph(phl, img)}<p class="sub">{e(desc)}</p>'
             f'<p class="price">{e(price)} <span>· {e(usd)}</span></p><p class="small">{e(small)}</p></div>')
 
 def top_page(lang, other):
     T = TOP[lang]; P = T["ph"]
+    pre = "" if lang == "en" else "../"
+    fr_src, fr_alt = PHOTO["french"]
     ledes = "".join(f'<p class="lede">{e(l)}</p>' for l in T["ledes"])
     meta, h, desc = T["long"]
     return head(lang, T["title"], T["desc"]) + f"""<header class="top">
@@ -251,7 +263,7 @@ def top_page(lang, other):
 {plan_block(T["usual"], P[3])}
 <p class="small">{e(T["combos"])}</p>
 <div class="plan"><p class="meta">{e(meta)}</p><h3>{e(h)}</h3><p class="sub">{e(desc)}</p>
-<div class="two">{opt_block(T["sushi"], P[4])}{opt_block(T["french"], P[5])}</div>
+<div class="two">{opt_block(T["sushi"], P[4])}{opt_block(T["french"], P[5], (pre + fr_src, fr_alt[lang]))}</div>
 <p class="small">{e(T["long_foot"])}</p></div>
 </section>
 <section class="part"><p class="label">{e(T["inc_label"])}</p>{ul(T["included"])}</section>
