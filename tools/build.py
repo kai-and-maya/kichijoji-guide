@@ -116,6 +116,12 @@ def ph(label, img=None):
         return f'<figure class="ph photo"><img src="{img[0]}" alt="{e(img[1])}" loading="lazy"></figure>'
     return f'<figure class="ph" aria-hidden="true"><span>{e(label)}</span></figure>'
 
+def versioned(src):
+    # Add a content hash so a replaced photo is never served from an old cache
+    import hashlib
+    with open(os.path.join(ROOT, src), "rb") as f:
+        return src + "?v=" + hashlib.sha1(f.read()).hexdigest()[:8]
+
 # Photos the shop has agreed to (Petillant: 2026-11-07, owner's blanket OK)
 PHOTO = {
   "french": ("img/petillant.jpg", {"en": "The owner-chef of Pétillant plating a dish at the counter", "ja": "ペティヤンの店主が、カウンターの前で料理を盛り付けているところ"}),
@@ -234,6 +240,7 @@ def top_page(lang, other):
     T = TOP[lang]; P = T["ph"]
     pre = "" if lang == "en" else "../"
     fr_src, fr_alt = PHOTO["french"]
+    fr_src = versioned(fr_src)
     ledes = "".join(f'<p class="lede">{e(l)}</p>' for l in T["ledes"])
     meta, h, desc = T["long"]
     return head(lang, T["title"], T["desc"]) + f"""<header class="top">
