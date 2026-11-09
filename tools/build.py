@@ -122,8 +122,9 @@ def versioned(src):
     with open(os.path.join(ROOT, src), "rb") as f:
         return src + "?v=" + hashlib.sha1(f.read()).hexdigest()[:8]
 
-# Photos the shop has agreed to (Petillant: 2026-11-07, owner's blanket OK)
+# Photos the shop has agreed to (Petillant: 2026-11-07, owner's blanket OK; Hanamichi: photo OK per the shop sheet)
 PHOTO = {
+  "usual": ("img/hanamichi.jpg", {"en": "The okami of Hanamichi smiling behind the counter", "ja": "花道の女将さんが、カウンターの向こうで笑っているところ"}),
   "french": ("img/petillant.jpg", {"en": "The owner-chef of Pétillant plating a dish at the counter", "ja": "ペティヤンの店主が、カウンターの前で料理を盛り付けているところ"}),
 }
 
@@ -226,9 +227,9 @@ TOP = {
  ),
 }
 
-def plan_block(p, phl):
+def plan_block(p, phl, img=None):
     meta, h, desc, price, usd, small = p
-    return (f'<div class="plan"><p class="meta">{e(meta)}</p><h3>{e(h)}</h3>{ph(phl)}<p class="sub">{e(desc)}</p>'
+    return (f'<div class="plan"><p class="meta">{e(meta)}</p><h3>{e(h)}</h3>{ph(phl, img)}<p class="sub">{e(desc)}</p>'
             f'<p class="price">{e(price)} <span>· {e(usd)}</span></p><p class="small">{e(small)}</p></div>')
 
 def opt_block(o, phl, img=None):
@@ -239,8 +240,9 @@ def opt_block(o, phl, img=None):
 def top_page(lang, other):
     T = TOP[lang]; P = T["ph"]
     pre = "" if lang == "en" else "../"
-    fr_src, fr_alt = PHOTO["french"]
-    fr_src = versioned(fr_src)
+    def photo(key):
+        src, alt = PHOTO[key]
+        return (pre + versioned(src), alt[lang])
     ledes = "".join(f'<p class="lede">{e(l)}</p>' for l in T["ledes"])
     meta, h, desc = T["long"]
     return head(lang, T["title"], T["desc"]) + f"""<header class="top">
@@ -267,10 +269,10 @@ def top_page(lang, other):
 <h2>{e(T["ways_h"])}</h2>
 <p class="sub">{e(T["ways"])}</p>
 {plan_block(T["casual"], P[2])}
-{plan_block(T["usual"], P[3])}
+{plan_block(T["usual"], P[3], photo("usual"))}
 <p class="small">{e(T["combos"])}</p>
 <div class="plan"><p class="meta">{e(meta)}</p><h3>{e(h)}</h3><p class="sub">{e(desc)}</p>
-<div class="two">{opt_block(T["sushi"], P[4])}{opt_block(T["french"], P[5], (pre + fr_src, fr_alt[lang]))}</div>
+<div class="two">{opt_block(T["sushi"], P[4])}{opt_block(T["french"], P[5], photo("french"))}</div>
 <p class="small">{e(T["long_foot"])}</p></div>
 </section>
 <section class="part"><p class="label">{e(T["inc_label"])}</p>{ul(T["included"])}</section>
