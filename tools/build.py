@@ -124,6 +124,7 @@ def versioned(src):
 
 # Photos the shop has agreed to (Petillant: 2026-11-07, owner's blanket OK; Hanamichi: photo OK per the shop sheet)
 PHOTO = {
+  "casual": ("img/hanamichi-counter.jpg", {"en": "Drinks and small dishes on the counter at Hanamichi", "ja": "花道のカウンターに並んだお酒と小鉢"}),
   "usual": ("img/hanamichi.jpg", {"en": "The okami of Hanamichi smiling behind the counter", "ja": "花道の女将さんが、カウンターの向こうで笑っているところ"}),
   "french": ("img/petillant.jpg", {"en": "The owner-chef of Pétillant plating a dish at the counter", "ja": "ペティヤンの店主が、カウンターの前で料理を盛り付けているところ"}),
 }
@@ -268,7 +269,7 @@ def top_page(lang, other):
 <p class="label">{e(T["ways_label"])}</p>
 <h2>{e(T["ways_h"])}</h2>
 <p class="sub">{e(T["ways"])}</p>
-{plan_block(T["casual"], P[2])}
+{plan_block(T["casual"], P[2], photo("casual"))}
 {plan_block(T["usual"], P[3], photo("usual"))}
 <p class="small">{e(T["combos"])}</p>
 <div class="plan"><p class="meta">{e(meta)}</p><h3>{e(h)}</h3><p class="sub">{e(desc)}</p>
