@@ -390,7 +390,8 @@ MANNERS = [
   ("Ask before photos", "写真は一声かけて", "Food is usually fine. Ask before photographing the owner or other guests: \"Shashin, ii desu ka?\"", "料理はたいてい大丈夫です。店主やほかのお客さんを撮るときは「写真、いいですか？」と聞きましょう。"),
   ("Shared space", "カウンターは共有", "Counter seats are close together. Keep voices easy and bags under your chair.", "カウンターの席は近いので、声は控えめに。荷物はいすの下へ。"),
   ("Smoking", "たばこ", "Rules differ by place, and many are smoke-free inside. Ask before you light up.", "ルールは店ごとに違い、店内禁煙の店も多いです。火をつける前に聞きましょう。"),
-  ("Paying", "お支払い", "Many places take cards. A little yen in your pocket still helps.", "カードが使える店は多いですが、少し現金があると安心です。")]),
+  ("No outside drinks", "持ち込みはしない", "Don't bring your own drinks, not even water. Want water? Ask for a chaser: \"Chaser, kudasai.\"", "飲み物の持ち込みはしません。水も同じです。水がほしいときは「チェイサー、ください」。"),
+  ("Paying", "お支払い", "How you pay depends on the place: at your seat, at the register, or they take your card to the back to run it. Many places take cards, but a little yen still helps.", "払い方は店によって違います。席で会計する店、レジで払う店、カードを預かって奥で決済する店があります。カードが使える店は多いですが、少し現金があると安心です。")]),
  ("Sharing the table", "みんなで食べるとき", [
   ("Torizara", "取り皿", "Small plates for sharing. Dishes are meant for the table: \"Torizara, kudasai.\"", "取り分け用の小皿。料理はみんなで分けるものです。「取り皿、ください」。"),
   ("Oshaku", "お酌", "Pour for your friends, and they pour for you. Nobody fills their own glass first.", "友人のグラスに注ぎ、自分のぶんは注いでもらいます。自分で先に注ぐ人はいません。"),
